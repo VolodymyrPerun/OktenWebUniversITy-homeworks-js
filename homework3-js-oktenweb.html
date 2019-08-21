@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //зробити масив з 10 чисел [2,17,13,6,22,31,45,66,100,-18]та:
+        document.write('зробити масив з 10 чисел [2,17,13,6,22,31,45,66,100,-18]та:' + '<br>');
+        document.write('<br>');
+        document.write('const arr = [2,17,13,6,22,31,45,66,100,-18]' + '<br>');
+        document.write('<br>');
+        //////////////////
+        const arr = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
+        /////////////////
+
+
+        // 1. перебрати його циклом while
+        document.write('1. перебрати його циклом while' + '<br>');
+        document.write('<br>');
+
+        i = 0;
+        while (i < arr.length) {
+            document.write(arr[i] + '<br>');
+            i++;
+        }
+
+        document.write('<br>');
+        // 2. перебрати його циклом for
+        document.write('2. перебрати його циклом for' + '<br>');
+        document.write('<br>');
+
+
+        for (let i = 0; i < arr.length; i++) {
+            document.write(arr[i] + '<br>');
+        }
+
+
+        document.write('<br>');
+        // 3. перебрати циклом while та вивести  числа тільки з непарним індексом
+        document.write('3. перебрати циклом while та вивести  числа тільки з непарним індексом' + '<br>');
+        document.write('<br>');
+
+        i = 0;
+        while (i < arr.length) {
+            document.write(arr[i] + '<br>');
+            i = i + 2;
+        }
+
+        document.write('<br>');
+        // 4. перебрати циклом for та вивести  числа тільки з непарним індексом
+        document.write('4. перебрати циклом for та вивести  числа тільки з непарним індексом' + '<br>');
+        document.write('<br>');
+
+
+        for (let i = 0; i < arr.length; i = i + 2) {
+            document.write(arr[i] + '<br>');
+        }
+
+
+        document.write('<br>');
+        // 5. перебрати циклом while та вивести  числа тільки парні  значення 
+        document.write('5. перебрати циклом while та вивести  числа тільки парні  значення ' + '<br>');
+        document.write('<br>');
+
+
+        i = 0;
+        while (i < arr.length) {
+            if (arr[i] % 2 == 0) {
+                document.write(arr[i] + '<br>');
+            }
+            i = i + 1;
+        }
+
+        document.write('<br>');
+
+        // 6. перебрати циклом for та вивести  числа тільки парні  значення 
+        document.write('6. перебрати циклом for та вивести  числа тільки парні  значення ' + '<br>');
+        document.write('<br>');
+
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                document.write(arr[i] + '<br>');
+            }
+        }
+
+
+        document.write('<br>');
+        // 7. замінити кожне число кратне 3 на слово "okten"
+        document.write('3. перебрати циклом while та вивести  числа тільки з непарним індексом' + '<br>');
+        document.write('<br>');
+
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 3 == 0)
+                arr[i] = 'okten';
+
+            document.write(arr[i] + '<br>');
+        }
+
+        document.write('<br>');
+
+        // 8. вивести масив в зворотньому порядку.
+        document.write('8. вивести масив в зворотньому порядку.' + '<br>');
+        document.write('<br>');
+
+
+        for (let i = arr.length - 1; i >= 0; i--) {
+
+            document.write(arr[i] + '<br>');
+        }
+
+        document.write('<br>');
+
+
+        // 9. всі попередні завдання (окрім 8), але в зворотньому циклі (с заду на перед)
+        document.write('9. всі попередні завдання (окрім 8), але в зворотньому циклі (с заду на перед)' + '<br>');
+        document.write('<br>');
+
+        // 1. перебрати його циклом while
+        document.write('1. перебрати його циклом while' + '<br>');
+        document.write('<br>');
+
+
+        document.write('<br>');
+        i = arr.length - 1;
+        while (i >= 0) {
+            document.write(arr[i] + '<br>');
+            i--;
+        }
+
+        document.write('<br>');
+        // 2. перебрати його циклом for
+        document.write('2. перебрати його циклом for' + '<br>');
+        document.write('<br>');
+
+        for (let i = arr.length - 1; i >= 0; i--) {
+            document.write(arr[i] + '<br>');
+        }
+
+
+        document.write('<br>');
+        // 3. перебрати циклом while та вивести  числа тільки з непарним індексом
+        document.write('3. перебрати циклом while та вивести  числа тільки з непарним індексом' + '<br>');
+        document.write('<br>');
+
+
+        i = arr.length - 1;
+        while (i >= 0) {
+            document.write(arr[i] + '<br>');
+            i = i - 2;
+        }
+
+        document.write('<br>');
+        // 4. перебрати циклом for та вивести  числа тільки з непарним індексом
+        document.write('4. перебрати циклом for та вивести  числа тільки з непарним індексом' + '<br>');
+        document.write('<br>');
+
+
+        for (let i = arr.length - 1; i >= 0; i = i - 2) {
+            document.write(arr[i] + '<br>');
+        }
+
+
+        document.write('<br>');
+        // 5. перебрати циклом while та вивести  числа тільки парні  значення 
+        document.write('5. перебрати циклом while та вивести  числа тільки парні  значення ' + '<br>');
+        document.write('<br>');
+
+
+        i = arr.length - 1;
+        while (i >= 0) {
+            if (arr[i] % 2 == 0) {
+                document.write(arr[i] + '<br>');
+            }
+            i = i - 1;
+        }
+
+        document.write('<br>');
+
+        // 6. перебрати циклом for та вивести  числа тільки парні  значення
+        document.write('6. перебрати циклом for та вивести  числа тільки парні  значення' + '<br>');
+        document.write('<br>');
+
+
+        for (let i = arr.length - 1; i >= 0; i = i - 1) {
+            if (arr[i] % 2 == 0) {
+                document.write(arr[i] + '<br>');
+            }
+        }
+
+
+        document.write('<br>');
+
+
+        // 10
+        //  створити пустий масив та :
+        document.write('10.створити пустий масив та :' + '<br>');
+        document.write('<br>');
+        // - заповнити його 50 парними числами за допомоги циклу.
+        document.write('- заповнити його 50 парними числами за допомоги циклу. :' + '<br>');
+        document.write('<br>')
+
+        var result = [];
+        for (let start = 0; start < 100; start++) {
+            result.push(start++);
+        }
+        document.write(result);
+
+
+        document.write('<br>')
+
+        for (let i = 0; i < 100; i++) {
+            if (i % 2 === 0) {
+                result[i] = i;
+                document.write(result[i] + ',')
+            }
+        }
+
+        document.write('<br>');
+        document.write('<br>');
+
+        // - заповнити його 50 непарними числами за допомоги циклу.
+        document.write('- заповнити його 50 непарними числами за допомоги циклу. :' + '<br>');
+        document.write('<br>')
+        var result = [];
+
+        for (let start = 0; start < 100; start++) {
+            result.push(start = start + 1);
+        }
+        document.write(result);
+
+        document.write('<br>')
+
+        for (let i = 0; i < 100; i++) {
+            if (i % 2 === 1) {
+                result[i] = i;
+                document.write(result[i] + ',')
+            }
+        }
+
+    </script>
+</body>
+
+</html>
