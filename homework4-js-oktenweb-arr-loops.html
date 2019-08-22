@@ -221,17 +221,23 @@
         //         [1,2,[1,'2!',3] , 4,5,6]
         //         [123,21,123,[123,43], [123,4,4,4,'6!'] ,true]
         //         [['hello','oktenweb'],'asd','qwe', ['hello','oktenweb!']]
-        document.write('9. Є три масиви. вивести на консоль елементи позначені "!": [1,2,[1,\'2!\',3] , 4,5,6];   ' +'<br>' );
-        document.write('[123,21,123,[123,43], [123,4,4,4,\'6!\'] ,true];' +'  '+'  '+ '[[\'hello\',\'oktenweb\'],\'asd\',\'qwe\', [\'hello\',\'oktenweb!\']]  ' + '<br>' );
+        document.write('9. Є три масиви. вивести на консоль елементи позначені "!": [1,2,[1,\'2!\',3] , 4,5,6];   ' +
+            '<br>');
+        document.write('[123,21,123,[123,43], [123,4,4,4,\'6!\'] ,true];' + '  ' + '  ' +
+            '[[\'hello\',\'oktenweb\'],\'asd\',\'qwe\', [\'hello\',\'oktenweb!\']]  ' + '<br>');
         document.write('<br>');
 
 
 
-        let arr7 = [1,2,[1,'2!',3] , 4,5,6];
-        let arr8 = [123,21,123,[123,43], [123,4,4,4,'6!'] ,true];
-        let arr9 = [['hello','oktenweb'],'asd','qwe', ['hello','oktenweb!']];
+        let arr7 = [1, 2, [1, '2!', 3], 4, 5, 6];
+        let arr8 = [123, 21, 123, [123, 43],
+            [123, 4, 4, 4, '6!'], true
+        ];
+        let arr9 = [
+            ['hello', 'oktenweb'], 'asd', 'qwe', ['hello', 'oktenweb!']
+        ];
 
-        document.write(arr7[2] + '<br>' + arr8[4] + '<br>' +arr9[3])
+        document.write(arr7[2] + '<br>' + arr8[4] + '<br>' + arr9[3])
 
 
         document.write('<br>');
@@ -261,7 +267,46 @@
         //           vinCode: 'bl5lasd123lxcz',
         //           color: 'silver'
         //         }
-        //     9. Створити об'єкит, які характеризують членів вашої родини
+        document.write(
+            '8 . Є об\'єкт який характеризує автомобіль вивести на консоль : виробника,тип двигуна, об\'єм двигуна тип трансміссіі' +
+            '<br>');
+        document.write('let legacy = {type: \'sedan\',manufaturer: \'subaru\',model: \'legacy,\'' + '<br>' +
+            'engine: {type: \'ej\',series: 204,volume: 2,horsePower: 164},' + '<br>' +
+            'transmission: {type: \'4eat\'},' + '<br>' +
+            'year: 2007,vinCode: \'bl5lasd123lxcz\',color: \'silver\'}' + '<br>');
+        document.write('<br>');
+        document.write('<br>');
+
+        let legacy = {
+            type: 'sedan',
+            manufaturer: 'subaru',
+            model: 'legacy',
+            engine: {
+                type: 'ej',
+                series: 204,
+                volume: 2,
+                horsePower: 164
+            },
+            transmission: {
+                type: '4eat'
+            },
+            year: 2007,
+            vinCode: 'bl5lasd123lxcz',
+            color: 'silver'
+        };
+
+
+        document.write('Виробник: ' + ' ' + legacy.manufaturer + '<br>');
+        document.write('Tип двигуна: ' + ' ' + legacy.engine.type + '<br>');
+        document.write('Об\'єм двигуна: ' + ' ' + legacy.engine.volume + '<br>');
+        document.write('Tип трансміссіі: ' + ' ' + legacy.transmission.type + '<br>');
+
+
+
+
+
+        document.write('<br>');
+        document.write('<br>');
     </script>
 </body>
 
