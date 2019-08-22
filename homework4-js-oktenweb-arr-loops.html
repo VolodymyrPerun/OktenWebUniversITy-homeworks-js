@@ -242,7 +242,7 @@
 
         document.write('<br>');
         document.write('<br>');
-        //         8 .
+        //         10 .
         //         Є об'єкт який характеризує автомобіль
         //         вивести на консоль : 
         //          - виробника
@@ -268,7 +268,7 @@
         //           color: 'silver'
         //         }
         document.write(
-            '8 . Є об\'єкт який характеризує автомобіль вивести на консоль : виробника,тип двигуна, об\'єм двигуна тип трансміссіі' +
+            '10 . Є об\'єкт який характеризує автомобіль вивести на консоль : виробника,тип двигуна, об\'єм двигуна тип трансміссіі' +
             '<br>');
         document.write('let legacy = {type: \'sedan\',manufaturer: \'subaru\',model: \'legacy,\'' + '<br>' +
             'engine: {type: \'ej\',series: 204,volume: 2,horsePower: 164},' + '<br>' +
@@ -307,6 +307,37 @@
 
         document.write('<br>');
         document.write('<br>');
+
+        // 11. Створити об'єкит, які характеризують членів вашої родини
+        document.write('7. Створити об\'єкти, які характеризують членів вашої родини' + '<br>');
+        document.write('<br>');
+        let mother = {
+            age: 72,
+            height: 152,
+            name: 'Irin',
+            man: false
+        };
+
+        document.write(`ім'я: ${mother.name} <br />`);
+        document.write(`чоловіча стать: ${mother.man} <br />`);
+
+        let a = {};
+        for (let key in mother) {
+            a[key] = mother[key];
+        }
+        a.man = true;
+        document.write(a.man + '<br />');
+        document.write(mother.man + '<br />');
+
+        ///////////////
+        document.write('<br />');
+        //////////////
+
+        for (let key in mother) {
+            document.write(`Це є ключ - ${key}` + '<br />');
+            document.write(`А це є значення- ${mother[key]}` + '<br />');
+            a[key] = mother[key];
+        }
     </script>
 </body>
 
