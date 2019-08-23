@@ -203,15 +203,18 @@
         // Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25, то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
 
         let carsOwnersExperienceLevelUpped = cars;
-        for (let i = 0; i < carsVolumeAndPriceUpped.length; i ++) {
-            // if ()
-            carsVolumeAndPriceUpped[i].volume = (carsVolumeAndPriceUpped[i].volume * 1.1).toFixed(2);
-            carsVolumeAndPriceUpped[i].price = (carsVolumeAndPriceUpped[i].price * 1.05);
+        for (let i = 0; i < carsOwnersExperienceLevelUpped.length; i ++) {
+            if (carsOwnersExperienceLevelUpped[i].owner.experience < 5 && carsOwnersExperienceLevelUpped[i].owner.age > 25) {
+                carsOwnersExperienceLevelUpped[i].owner.experience += 1;
+            }
+            
         }
-        console.log(carsOwnersExperienceLevelUpped );
+        console.log(carsOwnersExperienceLevelUpped);
 
 
         // Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
+
+        
     </script>
 </body>
 
