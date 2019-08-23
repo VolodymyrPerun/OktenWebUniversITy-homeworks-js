@@ -214,7 +214,11 @@
 
         // Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
 
-        
+        let sumCarsPrices = 0;
+        for (let i = 0; i < cars.length; i ++) {
+            sumCarsPrices += cars[i].price;
+        }
+        console.log(sumCarsPrices);
     </script>
 </body>
 
