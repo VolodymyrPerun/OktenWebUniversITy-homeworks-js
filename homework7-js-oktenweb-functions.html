@@ -66,11 +66,6 @@
 
 
         //  4 --//-- яка скаладає значення елементів масиву та повертає його.
-        //   Приклад
-        //   [1,2,3,4]
-        //   [2,3,4,5]
-        //   результат
-        //   [3,5,7,9]
 
         function arrayOutputRandomMultiple() {
             let arr = [];
@@ -94,10 +89,15 @@
 
         //   5 --//-- яка скаладає значення елементів з однаковими індексами 
         // та повертає новий результуючий масив.
+        //   Приклад
+        //   [1,2,3,4]
+        //   [2,3,4,5]
+        //   результат
+        //   [3,5,7,9]
 
         let arr1 = [1, 2, 3, 4];
         let arr2 = [2, 3, 4, 5];
-//***********************************************************
+        //***********************************************************
         function sumArray(arr1, arr2) {
             let arr3 = [];
             for (let i = 0; i < Math.max(arr1.length, arr2.length); i++) {
@@ -108,23 +108,23 @@
 
         console.log(sumArray(arr1, arr2));
 
-//*************************************************************
+        //*************************************************************
 
 
-let sum1 = arr1.map((a, i) => a + arr2[i]);
+        let sum1 = arr1.map((a, i) => a + arr2[i]);
 
-console.log(sum1);
+        console.log(sum1);
 
-        
-//***********************************************************
+
+        //***********************************************************
         let sum2 = arr1.map(function (num, i) {
             return num + arr2[i];
         });
 
         console.log(sum2);
-//***********************************************************
+        //***********************************************************
 
-        
+
 
         // 6 --// -- яка буде переносити елементи з значенням 0 у кінець масиву.
         // Зберігаючи при цьому порядок не нульових значень.
@@ -133,6 +133,42 @@ console.log(sum1);
         // [1,0,6,0,3] => [1,6,3,0,0]
         // [0,1,2,3,4] => [1,2,3,4,0]
         // [0,0,1,0]   => [1,0,0,0]
+
+        let arr5 = [0,0,1,0, 55, 6, 0, 0, 8, 0];
+
+
+        function changeArray(arr5) {
+            let newArrayZerosLess = [];
+            let newArrayOnlyZeros = [];
+            let newArrayZerosLast = [];
+
+            for (let i = 0; i < arr5.length; i++) {
+
+                if (!Array.isArray(arr5) || typeof i !== 'number') {
+                    throw new Error('Bad request');
+                }
+
+                if (arr5.length <= 2 && arr5.length >= 200) {
+                    throw new Error('i is not correct');
+                }
+
+                if (arr5[i] !== 0) {
+                    newArrayZerosLess.push((arr5[i] || 0));
+                }
+
+                if (arr5[i] === 0) {
+                    newArrayOnlyZeros.push((newArrayZerosLess[i] || 0));
+                }
+
+                newArrayZerosLast = newArrayZerosLess.concat(newArrayOnlyZeros);
+
+            }
+            return newArrayZerosLast;
+        }
+
+        console.log(changeArray(arr5));
+
+        
     </script>
 </body>
 
