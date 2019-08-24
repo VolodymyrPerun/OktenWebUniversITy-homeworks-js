@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //         створити методи які :
+        // 1. приймає три числа та виводить та повертає найменьше.
+
+        function res1(a, b, c) {
+            const minVal = Math.min(a, b, c);
+            console.log(minVal);
+            return minVal;
+        }
+        res1(1, 2, 3);
+
+
+        // 2. приймає три числа та виводить та повертає найбільше.
+
+        function res2(a, b, c) {
+            const maxVal = Math.max(a, b, c);
+            console.log(maxVal);
+            return maxVal;
+        }
+        let sortMax = res2(1, 2, 3);
+        console.log('Biggest value: ' + sortMax);
+
+
+        // 3. приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше
+
+
+
+        function res3() {
+            let values = Object.values(arguments);
+            console.log(values);
+            let maxVal = values[0];
+
+            for (let i = 0; i < values.length; i++) {
+                if (maxVal < values[i]) {
+                    maxVal = values[i];
+                }
+            }
+            console.log(maxVal);
+        }
+        res3(1, 2, 3, 555, 5, 8888888, 4, 365, 1.3e+10);
+
+        // 4. виводить масив
+        // 5. повертає найбільше число з масиву
+        // 6. повертає найменьше число з масиву
+        // 7. виводить масив, але напрямок вивденння(сходження\ спадання) визначається колбеком
+        // 8. приймає масив та число (i). та міняє місцями об`єкт який знаходиться в індексі "i" на "i+1"
+    </script>
+</body>
+
+</html>
