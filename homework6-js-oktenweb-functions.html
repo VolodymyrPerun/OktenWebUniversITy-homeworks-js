@@ -57,7 +57,7 @@
             console.log(values);
         }
         res4(5, 2, 73, 755, 85, 88, 4, 5, 1.4e+10);
-        
+
 
         // 6. повертає найменьше число з масиву
 
@@ -75,9 +75,29 @@
         }
         res5(5, 2, 73, 755, 85, 88, 4, 5, 1.4e+10);
 
-        // 7. приймає масив та число (i). та міняє місцями об`єкт який знаходиться в індексі "i" на "i+1"
+        // 7. приймає масив та число (i). та міняє місцями
+        // об`єкт який знаходиться в індексі "i" на "i+1"
 
-        
+        function res6(array, i) {
+            if (!Array.isArray(array) ||typeof i !== 'number') {
+                throw new Error('Bad request');
+            }
+                
+
+
+            if (i < 0 || i > array.length -1) {
+                throw new Error('i is not correct')
+            }
+
+            let valueToChange = array[i];
+
+            array[i] = array[i+1];
+            array[i+1] = valueToChange;
+
+            console.log(array);
+        }
+        res6([55,8,6658,7,999,5,24], 1);
+
     </script>
 </body>
 
