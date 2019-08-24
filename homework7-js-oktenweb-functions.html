@@ -46,7 +46,7 @@
         function arrayOutputRandomMaxVal() {
             let arr = [];
             let values = Object.values(arguments);
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 4; i++) {
                 arr[i] = (parseInt(Math.random() * (15 - 1) + 1));
                 values += arr[i];
 
@@ -86,8 +86,39 @@
 
         }
         arrayOutputRandomMultiple();
+
+        //   5 --//-- яка скаладає значення елементів з однаковими індексами 
+        // та повертає новий результуючий масив.
+
+        let arr1 = [1, 2, 3, 4];
+        let arr2 = [2, 3, 4, 5];
+//***********************************************************
+        function sumArray(arr1, arr2) {
+            let arr3 = [];
+            for (let i = 0; i < Math.max(arr1.length, arr2.length); i++) {
+                arr3.push((arr1[i] || 0) + (arr2[i] || 0));
+            }
+            return arr3;
+        }
+
+        console.log(sumArray(arr1, arr2));
+
+//*************************************************************
+
+
+let sum1 = arr1.map((a, i) => a + arr2[i]);
+
+console.log(sum1);
+
         
-        //   5 --//-- яка скаладає значення елементів з однаковими індексами  та повертає новий результуючий масив.
+//***********************************************************
+        let sum2 = arr1.map(function (num, idx) {
+            return num + arr2[idx];
+        });
+
+        console.log(sum2);
+//***********************************************************
+
         //   Приклад
         //   [1,2,3,4]
         //   [2,3,4,5]
