@@ -26,7 +26,7 @@
         //  2 стіорити функцію яка заповнює масив рандомними числами та виводить його. 
         //  Для виведення використати попвередню функцію.
 
-        
+
 
         function arrayOutputRandom() {
             let arr = [];
@@ -43,7 +43,7 @@
         //  3 --//-- яка знаходить найбільше число в масиві.Для створення масиву використати
         //  попередню функцію
 
-        function arrayOutputRandom() {
+        function arrayOutputRandomMaxVal() {
             let arr = [];
             let values = Object.values(arguments);
             for (let i = 0; i < 20; i++) {
@@ -62,22 +62,31 @@
             }
             console.log(maxVal);
         }
-        arrayOutputRandom();
+        arrayOutputRandomMaxVal();
 
-        // function res5() {
-        //     let values = Object.values(arguments);
-        //     console.log(values);
-        //     let minVal = values[0];
 
-        //     for (let i = 0; i < values.length; i++) {
-        //         if (minVal > values[i]) {
-        //             minVal = values[i];
-        //         }
-        //     }
-        //     console.log(minVal);
-        // }
-        // res5(5, 2, 73, 755, 85, 88, 4, 5, 1.4e+10);
         //  4 --//-- яка скаладає значення елементів масиву та повертає його.
+
+        function arrayOutputRandomMultiple() {
+            let arr = [];
+            let values = Object.values(arguments);
+            for (let i = 0; i < 4; i++) {
+                arr[i] = (parseInt(Math.random() * (15 - 1) + 1));
+                values += arr[i];
+            };
+
+            console.log(arr);
+
+            let multiple = 1;
+            for (let i = 0; i < arr.length; i++) {
+                multiple *= arr[i];
+            }
+
+            console.log(multiple)
+
+        }
+        arrayOutputRandomMultiple();
+        
         //   5 --//-- яка скаладає значення елементів з однаковими індексами  та повертає новий результуючий масив.
         //   Приклад
         //   [1,2,3,4]
