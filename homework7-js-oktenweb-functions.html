@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1 створити функцію яка виводить масив 
+
+        function arrayOutput() {
+            let values = Object.values(arguments);
+            console.log(values)
+        }
+        arrayOutput([2, 5, 88, 'jjj', {
+                age: 4,
+                mail: 'man'
+            },
+            [88, 55, 1.6e-12]
+        ]);
+
+        //  2 стіорити функцію яка заповнює масив рандомними числами та виводить його. 
+        //  Для виведення використати попвередню функцію.
+
+        
+
+        function arrayOutputRandom() {
+            let arr = [];
+            let values = Object.values(arguments);
+            for (let i = 0; i < 20; i++) {
+                arr[i] = (parseInt(Math.random() * (15 - 1) + 1));
+                values += arr[i];
+
+            }
+            console.log(arr)
+        }
+        arrayOutputRandom();
+
+        //  3 --//-- яка знаходить найбільше число в масиві.Для створення масиву використати
+        //  попередню функцію
+
+        function arrayOutputRandom() {
+            let arr = [];
+            let values = Object.values(arguments);
+            for (let i = 0; i < 20; i++) {
+                arr[i] = (parseInt(Math.random() * (15 - 1) + 1));
+                values += arr[i];
+
+            }
+            console.log(arr)
+
+            let maxVal = values[0];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (maxVal < arr[i]) {
+                    maxVal = arr[i];
+                }
+            }
+            console.log(maxVal);
+        }
+        arrayOutputRandom();
+
+        // function res5() {
+        //     let values = Object.values(arguments);
+        //     console.log(values);
+        //     let minVal = values[0];
+
+        //     for (let i = 0; i < values.length; i++) {
+        //         if (minVal > values[i]) {
+        //             minVal = values[i];
+        //         }
+        //     }
+        //     console.log(minVal);
+        // }
+        // res5(5, 2, 73, 755, 85, 88, 4, 5, 1.4e+10);
+        //  4 --//-- яка скаладає значення елементів масиву та повертає його.
+        //   5 --//-- яка скаладає значення елементів з однаковими індексами  та повертає новий результуючий масив.
+        //   Приклад
+        //   [1,2,3,4]
+        //   [2,3,4,5]
+        //   результат
+        //   [3,5,7,9]
+
+        // 6 --// -- яка буде переносити елементи з значенням 0 у кінець маисву. Зберігаючи при цьому порядок не нульових значень.
+        // Двожина масиву від 2 до 100
+        // Приклад 
+        // [1,0,6,0,3] => [1,6,3,0,0]
+        // [0,1,2,3,4] => [1,2,3,4,0]
+        // [0,0,1,0]   => [1,0,0,0]
+    </script>
+</body>
+
+</html>
