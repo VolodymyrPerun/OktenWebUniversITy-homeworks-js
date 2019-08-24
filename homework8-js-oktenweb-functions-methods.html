@@ -1,91 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-//        - Даны два массива: ['a', 'b', 'c'] и [1, 2, 3]. Объедините их вместе.
+        //        - Даны два массива: ['a', 'b', 'c'] и [1, 2, 3]. Объедините их вместе.
 
-let firstArr = ['a', 'b', 'c'];
-let secondArr = [1, 2, 3];
+        let firstArr = ['a', 'b', 'c'];
+        let secondArr = [1, 2, 3];
 
-console.log(firstArr);
-console.log(secondArr);
-
-
-let concatArr = firstArr.concat(secondArr);
-
-console.log(concatArr);
-
-console.log(' ');
-
-// - Дан массив ['a', 'b', 'c']. Добавьте ему в конец элементы 1, 2, 3.
-console.log(firstArr);
-console.log(secondArr);
-
-let pushedArr = firstArr.concat(secondArr);
-
-console.log(pushedArr);
-// - Дан массив [1, 2, 3]. Сделайте из него массив [3, 2, 1].
-
-let arr = [1, 2, 3];
-
-let ReversedArr = arr.reverse();
-
-console.log(ReversedArr);
-
-// - Дан массив [1, 2, 3]. Добавьте ему в конец элементы 4, 5, 6.
-
-let arr2 = [1, 2, 3];
-
-arr2.push(4, 5, 6);
-
-console.log(arr2)
-
-// - Дан массив [1, 2, 3]. Добавьте ему в начало элементы 4, 5, 6. 
-
-let arr3 = [1, 2, 3];
-
-arr3.unshift(4, 5, 6);
-
-console.log(arr3);
+        console.log(firstArr);
+        console.log(secondArr);
 
 
-// - Дан массив ['js', 'css', 'jq']. Выведите на экран первый элемент при помощи shift
+        let concatArr = firstArr.concat(secondArr);
 
-let arr4 = ['js', 'css', 'jq'];
+        console.log(concatArr);
 
-let shiftedItem = arr4.shift();
+        console.log(' ');
 
-console.log(shiftedItem);
+        // - Дан массив ['a', 'b', 'c']. Добавьте ему в конец элементы 1, 2, 3.
+        console.log(firstArr);
+        console.log(secondArr);
 
-// - Дан массив ['js', 'css', 'jq']. Выведите на экран последний элемент при помощи pop
+        let pushedArr = firstArr.concat(secondArr);
 
-let popItem = arr4.pop();
+        console.log(pushedArr);
+        // - Дан массив [1, 2, 3]. Сделайте из него массив [3, 2, 1].
 
-console.log(popItem);
+        let arr = [1, 2, 3];
+
+        let ReversedArr = arr.reverse();
+
+        console.log(ReversedArr);
+
+        // - Дан массив [1, 2, 3]. Добавьте ему в конец элементы 4, 5, 6.
+
+        let arr2 = [1, 2, 3];
+
+        arr2.push(4, 5, 6);
+
+        console.log(arr2)
+
+        // - Дан массив [1, 2, 3]. Добавьте ему в начало элементы 4, 5, 6. 
+
+        let arr3 = [1, 2, 3];
+
+        arr3.unshift(4, 5, 6);
+
+        console.log(arr3);
 
 
-// - slice. Дан массив [1, 2, 3, 4, 5]. С помощью метода slice запишите в новый элементы [1, 2, 3].
+        // - Дан массив ['js', 'css', 'jq']. Выведите на экран первый элемент при помощи shift
 
-let arr5 = [1, 2, 3, 4, 5];
-let slicedArr = arr5.slice(0, 3);
+        let arr4 = ['js', 'css', 'jq'];
 
-console.log(slicedArr);
+        let shiftedItem = arr4.shift();
+
+        console.log(shiftedItem);
+
+        // - Дан массив ['js', 'css', 'jq']. Выведите на экран последний элемент при помощи pop
+
+        let popItem = arr4.pop();
+
+        console.log(popItem);
+
+
+        // - slice. Дан массив [1, 2, 3, 4, 5]. С помощью метода slice запишите в новый элементы [1, 2, 3].
+
+        let arr5 = [1, 2, 3, 4, 5];
+        let slicedArr = arr5.slice(0, 3);
+
+        console.log(slicedArr);
 
 
 
-// - slice. Дан массив [1, 2, 3, 4, 5]. С помощью метода slice запишите в новый элементы [3, 4, 5]
+        // - slice. Дан массив [1, 2, 3, 4, 5]. С помощью метода slice запишите в новый элементы [3, 4, 5]
 
-let arr6 = [1, 2, 3, 4, 5];
-let slicedArr2 = arr6.slice(2, 5);
+        let arr6 = [1, 2, 3, 4, 5];
+        let slicedArr2 = arr6.slice(2, 5);
 
-console.log(slicedArr2);
+        console.log(slicedArr2);
+
+        
 
     </script>
 </body>
+
 </html>
