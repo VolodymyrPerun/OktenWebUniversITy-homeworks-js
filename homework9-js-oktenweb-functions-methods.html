@@ -264,8 +264,26 @@
 
         //     - filter
 
+        let filter = users.filter(function (user) {
+
+            return user.age > 20
+        })
+
+        console.log(filter);
 
         //     - map
+
+        let mapAgeBiggest20 = filter.map(function (user) {
+
+            if (user.age > 20)
+
+                return user.age
+        })
+
+        console.log(mapAgeBiggest20)
+
+
+        //****************************************
 
         let map = users.map(function (user) {
 
@@ -278,16 +296,12 @@
 
         console.log(map)
 
-        let mapAgeBiggest20 = users.map(function (user) {
 
-                if (user.age > 20)
 
-                    return user.age
-        })
-
-        console.log(mapAgeBiggest20)
 
         //     - some
+
+
         //     - every
 
 
