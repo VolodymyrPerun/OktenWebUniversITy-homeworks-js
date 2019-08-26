@@ -141,11 +141,35 @@
 
         //     - виконати певні фільтрації(по вікові, імені...)
 
+        //***************
+
         let filteredByAgeUsers = users.filter(function (user) {
-            return user.age < 29;//  сортую масив об'єктів по спаданню кількістi знаків в іменi
+            return user.age < 29;//  фільтрую масив об'єктів по віку менше 29
         })
 
         console.log(filteredByAgeUsers);
+
+        //***************
+
+        let filteredByNameLengthUsers = users.filter(function (user) {
+            return user.name.length < 4;
+            //  фільтрую масив об'єктів по кількості букв в імені,
+            //  що менше 4
+        })
+
+        console.log(filteredByNameLengthUsers);
+
+
+        //***************
+
+        let filteredByTrueStatusUsers = users.filter(function (user) {
+            return user.status == true;
+            //  фільтрую масив об'єктів по статусу true
+        })
+
+        console.log(filteredByTrueStatusUsers);
+
+        //***************
 
 
         //     - зробити всіх старшими на рік
