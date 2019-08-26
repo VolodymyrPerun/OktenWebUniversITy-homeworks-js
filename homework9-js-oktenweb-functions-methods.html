@@ -240,6 +240,14 @@
         }
         console.log(newItemArray2);
 
+        //*********************************fought solution with splice
+
+
+        const splicedArray = users.splice(5, 1, newItem);
+
+        // newItemArray1[5] = newItem;
+
+        console.log(users)
 
 
         // організувати власні функції масивів
@@ -301,10 +309,23 @@
 
         //     - some
 
+        let some = users.some(function (user) {
+
+            return user.name === 'volodymyr'
+        })
+
+        console.log(some)
+
 
         //     - every
 
 
+        let every = users.every(function (user) {
+
+            return (typeof user.age === 'number')
+        })
+
+        console.log(every)
 
         // Взять библиотечный класс Array и добавить ему новый метод который 
         // - при вызове выводит на консоль текущий массив 
