@@ -202,17 +202,36 @@
 
         //     - удалити всіх в проміжку інексів від 3 до 6
 
-        let splicedUsers = users.splice(3, 3) 
 
+        let splicedUsers = users.splice(3, 3)
+        console.log(users);
         console.log(splicedUsers);
-        
+
+
         //     - замінити 5 елемент на інший
 
+        const newItem = {
+            name: 'volodymyr',
+            age: 33,
+            status: true
+        };
 
+        //********************************first solution
+        const newItemArray1 = users.slice();
 
+        newItemArray1[5] = newItem;
 
+        console.log(newItemArray1)
 
+        //********************************second solution
 
+        const newItemArray = Object.assign([], users, {
+            5: newItem
+        });
+
+        console.log(newItemArray);
+
+        
 
 
 
