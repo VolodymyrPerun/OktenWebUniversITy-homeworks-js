@@ -245,12 +245,23 @@
 
         const splicedArray = users.splice(5, 1, newItem);
 
-        // newItemArray1[5] = newItem;
-
         console.log(users)
 
+        //*********************************fifth solution with map
+        let mappedUsers = users.map(function (value, index) {
+            if (index === 5) {
+                value = newItem;
+            }
 
-        // організувати власні функції масивів
+            return value
+        });
+
+        console.log(mappedUsers)
+
+
+
+
+        //4. організувати власні функції масивів
         //     - foreach
 
         let sum = 0;
@@ -327,10 +338,46 @@
 
         console.log(every)
 
+
+
+
+
         // Взять библиотечный класс Array и добавить ему новый метод который 
+
+
         // - при вызове выводит на консоль текущий массив 
+
+        function arrayOutput() {
+            let values = Object.values(arguments);
+            console.log(values)
+        }
+        arrayOutput(5, 2, 73, 755, 85, 88, 4, 5, 1.4e+10);
+
+
         // - выводит только парные елементы
+
+        function arrayOutput1() {
+            let values = Object.values(arguments);
+
+            console.log(values.filter(function (values) {
+                return (values % 2 === 0);
+            }));
+
+        }
+        arrayOutput1(5, 2, 73, 755, 85, 88, 4, 5, 1.4e+10);
+
+
         // - выводит только элементы с парными индексами
+
+        function arrayOutput2() {
+            let values = Object.values(arguments);
+
+            console.log(values.filter(function (values, index) {
+                return (index % 2 === 0);
+            }));
+
+        }
+        arrayOutput2(5, 2, 73, 755, 85, 88, 4, 5, 1.4e+10);
     </script>
 </body>
 
