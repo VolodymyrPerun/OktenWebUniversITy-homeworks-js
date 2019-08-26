@@ -144,7 +144,7 @@
         //***************
 
         let filteredByAgeUsers = users.filter(function (user) {
-            return user.age < 29;//  фільтрую масив об'єктів по віку менше 29
+            return user.age < 29; //  фільтрую масив об'єктів по віку менше 29
         })
 
         console.log(filteredByAgeUsers);
@@ -175,15 +175,37 @@
         //     - зробити всіх старшими на рік
 
 
-        let olderUsers = users.map(function (user) {
-            return user.age + 1
+        users.forEach(function (user) {
+            user.age += 1;
         })
 
-        console.log(olderUsers)
+        console.log(users)
 
 
         //     - знайти перший/останній індекс об'єкта в якого ім'я макс
+
+        let indexFirst = users.findIndex(function (user) {
+            return user.name === 'max';
+
+        })
+
+        console.log(indexFirst);
+
+        let indexSecond = users.findIndex(function (user) {
+            return (user.name === 'max' && user.age != 31);
+
+        })
+
+        console.log(indexSecond);
+
+
+
         //     - удалити всіх в проміжку інексів від 3 до 6
+
+        let splicedUsers = users.splice(3, 3) 
+
+        console.log(splicedUsers);
+        
         //     - замінити 5 елемент на інший
 
 
