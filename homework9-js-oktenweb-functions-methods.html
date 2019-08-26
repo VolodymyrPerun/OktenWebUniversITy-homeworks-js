@@ -14,28 +14,28 @@
 
         // 1 створити масив з 10 елементів, заповнити його парними значеннями (2 4 6 8 10 ...).
 
-        let arr = [];
+        // let arr = [];
 
-        for (let i = 0; i < 21; i++) {
-            if (i % 2 === 0 && i > 0)
-                arr.push(i);
-        }
+        // for (let i = 0; i < 21; i++) {
+        //     if (i % 2 === 0 && i > 0)
+        //         arr.push(i);
+        // }
 
-        console.log(arr);
+        // console.log(arr);
 
         // 2 створити масив з 10 елементів, заповнити його цілими рандомними значеннями(Math.random)
 
 
-        let arr2 = [];
+        // let arr2 = [];
 
-        for (let i = 0; i < 9; i++) {
-            arr2[i] = (parseInt(Math.random() * (55 - 1) + 1));
-            if (arr2[i] > 0) {
-                arr2.push(arr2[i]);
-            }
+        // for (let i = 0; i < 9; i++) {
+        //     arr2[i] = (parseInt(Math.random() * (55 - 1) + 1));
+        //     if (arr2[i] > 0) {
+        //         arr2.push(arr2[i]);
+        //     }
 
-        }
-        console.log(arr2);
+        // }
+        // console.log(arr2);
 
 
 
@@ -106,7 +106,7 @@
         // })
 
         // console.log(sortedUsersAgeUp);
-        
+
 
         //////////////////////////////////////////////////////////////////////////////
 
@@ -117,17 +117,10 @@
         // console.log(sortedUsersAgeDown);
 
 
-        // let mappedUsers = users.map(function(user) {
-        // return user.age
-        // })
-
-        // let filteredUsersAgeUp = users.age.sort(function(a, b){
-        //     return a - b
-        // });
-        // console.log(mappedUsers);
-        // console.log(filteredUsersAgeUp)
 
         //     - відсортувати його за кількістю знаків в імені  (зростання , а потім окремо спадання)
+
+
 
         // let sortedUsersNameLengthUp = users.sort(function (a, b) {
         //     return a.name.length - b.name.length;//  сортую масив об'єктів по зростанню кількістi знаків в іменi
@@ -135,7 +128,7 @@
 
         // console.log(sortedUsersNameLengthUp);
 
-////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////
 
 
         // let sortedUsersNameLengthDown = users.sort(function (a, b) {
@@ -144,11 +137,38 @@
 
         // console.log(sortedUsersNameLengthDown);
 
+
+
         //     - виконати певні фільтрації(по вікові, імені...)
+
+        let filteredByAgeUsers = users.filter(function (user) {
+            return user.age < 29;//  сортую масив об'єктів по спаданню кількістi знаків в іменi
+        })
+
+        console.log(filteredByAgeUsers);
+
+
         //     - зробити всіх старшими на рік
+
+
+        let olderUsers = users.map(function (user) {
+            return user.age + 1
+        })
+
+        console.log(olderUsers)
+
+
         //     - знайти перший/останній індекс об'єкта в якого ім'я макс
         //     - удалити всіх в проміжку інексів від 3 до 6
         //     - замінити 5 елемент на інший
+
+
+
+
+
+
+
+
 
         // організувати власні функції масивів
         //     - foreach
