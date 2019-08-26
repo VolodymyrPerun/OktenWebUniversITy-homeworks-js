@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Bсе робити через функції масивів (foreach, map ...тд)
+
+        // 1 створити масив з 10 елементів, заповнити його парними значеннями (2 4 6 8 10 ...).
+
+        let arr = [];
+
+        for (let i = 0; i < 21; i++) {
+            if (i % 2 === 0 && i > 0)
+                arr.push(i);
+        }
+
+        console.log(arr);
+
+        // 2 створити масив з 10 елементів, заповнити його цілими рандомними значеннями(Math.random)
+
+
+        let arr2 = [];
+
+        for (let i = 0; i < 9; i++) {
+            arr2[i] = (parseInt(Math.random() * (55 - 1) + 1));
+            if (arr2[i] > 0) {
+                arr2.push(arr2[i]);
+            }
+
+        }
+        console.log(arr2);
+
+
+
+        // 3 є масив 
+
+        let users = [{
+                name: 'vasya',
+                age: 31,
+                status: false
+            },
+            {
+                name: 'petya',
+                age: 30,
+                status: true
+            },
+            {
+                name: 'kolya',
+                age: 29,
+                status: true
+            },
+            {
+                name: 'olya',
+                age: 28,
+                status: false
+            },
+            {
+                name: 'max',
+                age: 30,
+                status: true
+            },
+            {
+                name: 'anya',
+                age: 31,
+                status: false
+            },
+            {
+                name: 'oleg',
+                age: 28,
+                status: false
+            },
+            {
+                name: 'andrey',
+                age: 29,
+                status: true
+            },
+            {
+                name: 'masha',
+                age: 30,
+                status: true
+            },
+            {
+                name: 'olya',
+                age: 31,
+                status: false
+            },
+            {
+                name: 'max',
+                age: 31,
+                status: true
+            }
+        ];
+
+        //     - відсортувати його за  віком (зростання , а потім окремо спадання)
+
+
+        // let sortedUsersAgeUp = users.sort(function (a, b) {
+        //     return a.age - b.age;//       сортую масив об'єктів по зростанню віку
+        // })
+
+        // console.log(sortedUsersAgeUp);
+        
+
+        //////////////////////////////////////////////////////////////////////////////
+
+        // let sortedUsersAgeDown = users.sort(function (a, b) {
+        //     return b.age - a.age;//       сортую масив об'єктів по спаданню віку
+        // })
+
+        // console.log(sortedUsersAgeDown);
+
+
+        // let mappedUsers = users.map(function(user) {
+        // return user.age
+        // })
+
+        // let filteredUsersAgeUp = users.age.sort(function(a, b){
+        //     return a - b
+        // });
+        // console.log(mappedUsers);
+        // console.log(filteredUsersAgeUp)
+
+        //     - відсортувати його за кількістю знаків в імені  (зростання , а потім окремо спадання)
+
+        // let sortedUsersNameLengthUp = users.sort(function (a, b) {
+        //     return a.name.length - b.name.length;//  сортую масив об'єктів по зростанню кількістi знаків в іменi
+        // })
+
+        // console.log(sortedUsersNameLengthUp);
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+
+        // let sortedUsersNameLengthDown = users.sort(function (a, b) {
+        //     return b.name.length - a.name.length;//  сортую масив об'єктів по спаданню кількістi знаків в іменi
+        // })
+
+        // console.log(sortedUsersNameLengthDown);
+
+        //     - виконати певні фільтрації(по вікові, імені...)
+        //     - зробити всіх старшими на рік
+        //     - знайти перший/останній індекс об'єкта в якого ім'я макс
+        //     - удалити всіх в проміжку інексів від 3 до 6
+        //     - замінити 5 елемент на інший
+
+        // організувати власні функції масивів
+        //     - foreach
+        //     - filter
+        //     - map
+        //     - some
+        //     - every
+
+        // Створити масив об'єктів які характеризують теги HTML , в об'єктах повинні бути присутні
+        //  -назва тегу 
+        //  - опис його дій
+        //  - масив з атрибутами
+        //  Кожен атрибут описати як окремий який буде містити
+        //  -назву атрибуту
+        //  -опис дії атрибуту
+
+        //  інформацію брати з htmlbook.ru
+
+        //  Таким чином описати теги
+        //  -a
+        //  -div
+        //  -h1
+        //  -span
+        //  -input
+        //  -form
+        //  -option
+        //  -select
+        //  Приклад
+        //   var areaTag = {
+        //                 titleOfTag: 'area',
+        //                 action: Каждый элемент <area> определяет активные области изображения, которые являются ссылками...,
+        //                 attrs: [
+        //                     {titleOfAttr: 'accesskey', actionOfAttr: 'Переход к области с помощью комбинации клавиш'},
+        //                     {/*some props and values*/},
+        //                     {/*...*/},
+        //                     {/*...*/},
+        //                 ]
+
+        //             }
+
+
+        // Взять библиотечный класс Array и добавить ему новый метод который 
+        // - при вызове выводит на консоль текущий массив 
+        // - выводит только парные елементы
+        // - выводит только элементы с парными индексами
+
+
+        // 1.создать класс которы описывает машину. класс должен содержать 5-6 полей и функцию info()
+        // которая выводит инфрмацию про экземпляр класса (объект который вы создали)
+        // создать 10 различных экземпляров
+        // 2. Унаследовать класс Car в классе SuperCar. Добавить 3 новых поля.
+        // создать 10 различных экземпляров
+
+
+        // на основе предыдущего задания создать классы которые описывают 
+        // - Продукт
+        // - категорию
+        // - Магазин
+
+
+        // 1  
+        //   Протокол пошуку попелюшки
+        //   створити класс попелюшка з полями ім'я, вік, розмір ноги
+        //   Створити 10 попелюшок 
+        //   Сторити об'єкт класу "принц" який має поля ім'я, вік, туфелька яку він знайшов.
+        //   Знайти яка попелюшка його)
+    </script>
+</body>
+
+</html>
