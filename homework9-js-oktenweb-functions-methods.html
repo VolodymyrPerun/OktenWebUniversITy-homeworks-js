@@ -14,28 +14,38 @@
 
         // 1 створити масив з 10 елементів, заповнити його парними значеннями (2 4 6 8 10 ...).
 
-        // let arr = [];
+        function PushEmptyArr(capacity) {
+            let arr = [];
 
-        // for (let i = 0; i < 21; i++) {
-        //     if (i % 2 === 0 && i > 0)
-        //         arr.push(i);
-        // }
+            for (let i = 0; i < capacity; i++) {
+                if (i % 2 === 0 && i > 0)
+                    arr.push(i);
+            }
+            return arr
 
-        // console.log(arr);
+        }
+        console.log(PushEmptyArr(21));
+
 
         // 2 створити масив з 10 елементів, заповнити його цілими рандомними значеннями(Math.random)
 
+        function getRandomNum(min, max) {
+            return Math.round(Math.random() * (max - min) + min);
+        }
 
-        // let arr2 = [];
+        function getRandomArr(capacity, min, max) {
+            let arr2 = [];
 
-        // for (let i = 0; i < 9; i++) {
-        //     arr2[i] = (parseInt(Math.random() * (55 - 1) + 1));
-        //     if (arr2[i] > 0) {
-        //         arr2.push(arr2[i]);
-        //     }
+            for (let i = 0; i < capacity; i++) {
 
-        // }
-        // console.log(arr2);
+                let randomNam = getRandomNum(min, max);
+                arr2.push(randomNam);
+
+            }
+            return arr2;
+        }
+
+        console.log(getRandomArr(10, 1, 15));
 
 
 
@@ -378,8 +388,6 @@
 
         }
         arrayOutput2(5, 2, 73, 755, 85, 88, 4, 5, 1.4e+10);
-
-
     </script>
 </body>
 
