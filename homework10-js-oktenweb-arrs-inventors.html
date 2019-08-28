@@ -117,7 +117,49 @@ const transport =
     ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
 
 
-let transSum = 0; 
+let uniqueTrans = [];
+
+transport.forEach(function (trans) {
+    
+ if (trans === -1) {
+    uniqueTrans.push(trans)
+ }
+
+   return 
+ 
+})
+console.log(uniqueTrans);
+
+
+// transport.forEach(t => {
+//     if (uniqueTrans.indexOf(t) === -1) {
+//         uniqueTrans.push(t)
+//     }
+// });
+
+// console.log(uniqueTrans);
+
+// let transportCount = [];
+
+// uniqueTrans.forEach(t => {
+//     let transportInfo = {};
+//     transportInfo[t] = transport.filter(trans => trans === t).length;
+//     transportCount.push(transportInfo)
+// });
+
+// console.log(transportCount);
+
+
+// let cars = transport.reduce(function (obj, item) {
+//     if (!obj[item]) {
+//         obj[item] = 1;
+//         return obj;
+//     } else {
+//         obj[item]++;
+//         return obj;
+//     }
+// }, {});
+// console.log(cars); 
  
 
     </script>
