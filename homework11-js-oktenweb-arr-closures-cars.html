@@ -32,215 +32,357 @@
         // Створити не менше 7 та не більше 20 машинок.
         // Для початку вкладіть всі наші створені автомобілі в масив cars.
 
-        let cars = [{
-                mark: 'Daewoo',
-                volume: 1.3,
-                price: 8000,
-                year: 2017,
-                owner: {
-                    name: 'Victor',
-                    age: 23,
-                    experience: 15
+
+        function cars() {
+
+            let cars = [{
+                    mark: 'Daewoo',
+                    volume: 1.3,
+                    price: 8000,
+                    year: 2017,
+                    owner: {
+                        name: 'Victor',
+                        age: 23,
+                        experience: 15
+                    }
+                },
+                {
+                    mark: 'VAZ',
+                    volume: 1.2,
+                    price: 650,
+                    year: 1979,
+                    owner: {
+                        name: 'Volodymyr',
+                        age: 33,
+                        experience: 16
+                    }
+                },
+                {
+                    mark: 'BMW',
+                    volume: 2.0,
+                    price: 4000,
+                    year: 2002,
+                    owner: {
+                        name: 'Oleh',
+                        age: 19,
+                        experience: 2
+                    }
+                },
+                {
+                    mark: 'Chevrolet',
+                    volume: 1.6,
+                    price: 5000,
+                    year: 2007,
+                    owner: {
+                        name: 'Ivan',
+                        age: 45,
+                        experience: 25
+                    }
+                },
+                {
+                    mark: 'Toyota',
+                    volume: 3.5,
+                    price: 10000,
+                    year: 2006,
+                    owner: {
+                        name: 'Andriy',
+                        age: 23,
+                        experience: 3
+                    }
+                },
+                {
+                    mark: 'Tesla',
+                    volume: 4.0,
+                    price: 40000,
+                    year: 2017,
+                    owner: {
+                        name: 'Semen',
+                        age: 23,
+                        experience: 15
+                    }
+                },
+                {
+                    mark: 'Opel',
+                    volume: 2.2,
+                    price: 4600,
+                    year: 2003,
+                    owner: {
+                        name: 'Ihor',
+                        age: 53,
+                        experience: 35
+                    }
+                },
+                {
+                    mark: 'Mercedes',
+                    volume: 3.5,
+                    price: 23000,
+                    year: 2013,
+                    owner: {
+                        name: 'Karina',
+                        age: 25,
+                        experience: 4
+                    }
+                },
+                {
+                    mark: ' Nissan',
+                    volume: 1.3,
+                    price: 6500,
+                    year: 2012,
+                    owner: {
+                        name: 'Iryna',
+                        age: 29,
+                        experience: 1
+                    }
                 }
-            },
-            {
-                mark: 'VAZ',
-                volume: 1.2,
-                price: 650,
-                year: 1979,
-                owner: {
-                    name: 'Volodymyr',
+            ];
+
+            let newOwners = [{
+                    name: 'Lesia',
+                    age: 50,
+                    experience: 5
+                },
+                {
+                    name: 'Tania',
+                    age: 50,
+                    experience: 2
+                },
+                {
+                    name: 'Marik',
                     age: 33,
                     experience: 16
-                }
-            },
-            {
-                mark: 'BMW',
-                volume: 2.0,
-                price: 4000,
-                year: 2002,
-                owner: {
-                    name: 'Oleh',
-                    age: 19,
-                    experience: 2
-                }
-            },
-            {
-                mark: 'Chevrolet',
-                volume: 1.6,
-                price: 5000,
-                year: 2007,
-                owner: {
-                    name: 'Ivan',
-                    age: 45,
-                    experience: 25
-                }
-            },
-            {
-                mark: 'Toyota',
-                volume: 3.5,
-                price: 10000,
-                year: 2006,
-                owner: {
-                    name: 'Andriy',
-                    age: 23,
-                    experience: 3
-                }
-            },
-            {
-                mark: 'Tesla',
-                volume: 4.0,
-                price: 40000,
-                year: 2017,
-                owner: {
-                    name: 'Semen',
-                    age: 23,
-                    experience: 15
-                }
-            },
-            {
-                mark: 'Opel',
-                volume: 2.2,
-                price: 4600,
-                year: 2003,
-                owner: {
-                    name: 'Ihor',
-                    age: 53,
-                    experience: 35
-                }
-            },
-            {
-                mark: 'Mercedes',
-                volume: 3.5,
-                price: 23000,
-                year: 2013,
-                owner: {
-                    name: 'Karina',
-                    age: 25,
+                },
+                {
+                    name: 'Shumacher',
+                    age: 50,
+                    experience: 37
+                },
+                {
+                    name: 'Anna',
+                    age: 27,
+                    experience: 7
+                },
+                {
+                    name: 'Nicola',
+                    age: 28,
+                    experience: 6
+                },
+                {
+                    name: 'Nadia',
+                    age: 33,
                     experience: 4
-                }
-            },
-            {
-                mark: ' Nissan',
-                volume: 1.3,
-                price: 6500,
-                year: 2012,
-                owner: {
-                    name: 'Iryna',
-                    age: 29,
+                },
+                {
+                    name: 'Makos',
+                    age: 63,
+                    experience: 40
+                },
+                {
+                    name: 'Juliana',
+                    age: 20,
                     experience: 1
                 }
+            ];
+
+            return {
+                getCars: () => {
+                    return cars
+                },
+                newOwner: () => {
+                    cars.forEach((value, index) => {
+                        if (index % 2 === 0) {
+                            value.owner = newOwners[index];
+                        }
+                    })
+                },
+                improveCar: () => {
+                    cars.map((value, index) => {
+                        if (index % 2 === 0) {
+                            value.power = (+(value.power * 1.1).toFixed(2));
+                            value.price = (+(value.price * 1.05).toFixed(0));
+                        }
+                    })
+                },
+                improveExp: () => {
+                    cars.map(value => {
+
+                        if (value.owner.exp < 5 && value.owner.age > 25) {
+                            value.owner.exp += 1
+                        }
+                    })
+                },
+                getCarsPrice: () => {
+                    return cars.reduce((previousValue, currentValue) => {
+                        return previousValue + currentValue.price
+                    }, 0)
+                },
+                getMark: () => {
+                    return cars.map(value => {
+                        return value.mark
+                    })
+                },
+                getVolume: () => {
+                    return cars.map(value => {
+                        return value.volume
+                    })
+                },
+                getPrice: () => {
+                    return cars.map(value => {
+                        return value.price
+                    })
+                },
+                getYear: () => {
+                    return cars.map(value => {
+                        return value.year
+                    })
+                },
+                getOwner: () => {
+                    return {
+                        getOwnerName: () => {
+                            return cars.map(value => {
+                                return value.owner.name
+                            })
+                        },
+                        getOwnerAge: () => {
+                            return cars.map(value => {
+                                return value.owner.age
+                            })
+                        },
+                        getOwnerExperience: () => {
+                            return cars.map(value => {
+                                return value.owner.experience
+                            })
+                        }
+                    }
+                }
+
             }
-        ];
 
-        console.log(cars);
+        }
 
+
+        let carsOutput = cars();
+
+        console.log(carsOutput.getMark());
+        console.log(carsOutput.getVolume());
+        console.log(carsOutput.getPrice());
+        console.log(carsOutput.getYear());
+        console.log(carsOutput.getOwner());
+        console.log(carsOutput.getOwner().getOwnerName());
+        console.log(carsOutput.getOwner().getOwnerAge());
+        console.log(carsOutput.getOwner().getOwnerExperience());
+        carsOutput.newOwner();
+        carsOutput.improveCar();
+        carsOutput.improveExp();
+        console.log(carsOutput.getCarsPrice());;
+        console.log(carsOutput.getCars());
+
+        
 
         // Зробили половину автопарку ремонт мотору, 
         // що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
 
 
-        let carsVolumeUpped = cars;
-        for (let i = 0; i < carsVolumeUpped.length; i += 2) {
-            carsVolumeUpped[i].volume = (carsVolumeUpped[i].volume * 1.1).toFixed(2);
+        // let carsVolumeUpped = cars;
+        // for (let i = 0; i < carsVolumeUpped.length; i += 2) {
+        //     carsVolumeUpped[i].volume = (carsVolumeUpped[i].volume * 1.1).toFixed(2);
 
-        }
-        console.log(carsVolumeUpped);
-
-
-        // На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
-
-        let newOwners = [{
-                name: 'Lesia',
-                age: 50,
-                experience: 5
-            },
-            {
-                name: 'Tania',
-                age: 50,
-                experience: 2
-            },
-            {
-                name: 'Marik',
-                age: 33,
-                experience: 16
-            },
-            {
-                name: 'Shumacher',
-                age: 50,
-                experience: 37
-            },
-            {
-                name: 'Anna',
-                age: 27,
-                experience: 7
-            },
-            {
-                name: 'Nicola',
-                age: 28,
-                experience: 6
-            },
-            {
-                name: 'Nadia',
-                age: 33,
-                experience: 4
-            },
-            {
-                name: 'Makos',
-                age: 63,
-                experience: 40
-            },
-            {
-                name: 'Juliana',
-                age: 20,
-                experience: 1
-            }
-        ];
-
-        let carsNewOwners = carsVolumeUpped;
-        for (let i = 0; i < carsNewOwners.length; i += 2) {
-            carsNewOwners[i].owner = newOwners[i];
-        }
-        console.log(carsNewOwners);
+        // }
+        // console.log(carsVolumeUpped);
 
 
+        // // На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
 
-        // Далі необхідно рати кожну другу машинку (цикл з кроком в 2), 
-        //та робити їй підвищення потужності двигуна на 10% та ціну на 5%
+        // let newOwners = [{
+        //         name: 'Lesia',
+        //         age: 50,
+        //         experience: 5
+        //     },
+        //     {
+        //         name: 'Tania',
+        //         age: 50,
+        //         experience: 2
+        //     },
+        //     {
+        //         name: 'Marik',
+        //         age: 33,
+        //         experience: 16
+        //     },
+        //     {
+        //         name: 'Shumacher',
+        //         age: 50,
+        //         experience: 37
+        //     },
+        //     {
+        //         name: 'Anna',
+        //         age: 27,
+        //         experience: 7
+        //     },
+        //     {
+        //         name: 'Nicola',
+        //         age: 28,
+        //         experience: 6
+        //     },
+        //     {
+        //         name: 'Nadia',
+        //         age: 33,
+        //         experience: 4
+        //     },
+        //     {
+        //         name: 'Makos',
+        //         age: 63,
+        //         experience: 40
+        //     },
+        //     {
+        //         name: 'Juliana',
+        //         age: 20,
+        //         experience: 1
+        //     }
+        // ];
+
+        // let carsNewOwners = carsVolumeUpped;
+        // for (let i = 0; i < carsNewOwners.length; i += 2) {
+        //     carsNewOwners[i].owner = newOwners[i];
+        // }
+        // console.log(carsNewOwners);
 
 
-        let carsVolumeAndPriceUpped = carsNewOwners;
-        for (let i = 0; i < carsVolumeAndPriceUpped.length; i += 2) {
-            carsVolumeAndPriceUpped[i].volume = (carsVolumeAndPriceUpped[i].volume * 1.1).toFixed(2);
-            carsVolumeAndPriceUpped[i].price = (carsVolumeAndPriceUpped[i].price * 1.05);
-        }
-        console.log(carsVolumeAndPriceUpped);
+
+        // // Далі необхідно рати кожну другу машинку (цикл з кроком в 2), 
+        // //та робити їй підвищення потужності двигуна на 10% та ціну на 5%
 
 
-        // Після того зробити перевірку досвіду ВСІХ наших водіїв. 
-        // Якщо досвід водія менший за 5 років, але його вік більший за 25, 
-        // то необідно відправити його на курси підвищення кваліфікації, 
-        // що збільшить йому досвід на 1 рік.
-
-        let carsOwnersExperienceLevelUpped = cars;
-        for (let i = 0; i < carsOwnersExperienceLevelUpped.length; i++) {
-            if (carsOwnersExperienceLevelUpped[i].owner.experience < 5 && carsOwnersExperienceLevelUpped[i].owner.age >
-                25) {
-                carsOwnersExperienceLevelUpped[i].owner.experience += 1;
-            }
-
-        }
-        console.log(carsOwnersExperienceLevelUpped);
+        // let carsVolumeAndPriceUpped = carsNewOwners;
+        // for (let i = 0; i < carsVolumeAndPriceUpped.length; i += 2) {
+        //     carsVolumeAndPriceUpped[i].volume = (carsVolumeAndPriceUpped[i].volume * 1.1).toFixed(2);
+        //     carsVolumeAndPriceUpped[i].price = (carsVolumeAndPriceUpped[i].price * 1.05);
+        // }
+        // console.log(carsVolumeAndPriceUpped);
 
 
-        // Також спробуйте порахувати суму, яку потрібно потратити
-        // для покупки всіх цих авто в циклі
+        // // Після того зробити перевірку досвіду ВСІХ наших водіїв. 
+        // // Якщо досвід водія менший за 5 років, але його вік більший за 25, 
+        // // то необідно відправити його на курси підвищення кваліфікації, 
+        // // що збільшить йому досвід на 1 рік.
 
-        let sumCarsPrices = 0;
-        for (let i = 0; i < cars.length; i++) {
-            sumCarsPrices += cars[i].price;
-        }
-        console.log(sumCarsPrices);
+        // let carsOwnersExperienceLevelUpped = cars;
+        // for (let i = 0; i < carsOwnersExperienceLevelUpped.length; i++) {
+        //     if (carsOwnersExperienceLevelUpped[i].owner.experience < 5 && carsOwnersExperienceLevelUpped[i].owner.age >
+        //         25) {
+        //         carsOwnersExperienceLevelUpped[i].owner.experience += 1;
+        //     }
+
+        // }
+        // console.log(carsOwnersExperienceLevelUpped);
+
+
+        // // Також спробуйте порахувати суму, яку потрібно потратити
+        // // для покупки всіх цих авто в циклі
+
+        // let sumCarsPrices = 0;
+        // for (let i = 0; i < cars.length; i++) {
+        //     sumCarsPrices += cars[i].price;
+        // }
+        // console.log(sumCarsPrices);
     </script>
 </body>
 
