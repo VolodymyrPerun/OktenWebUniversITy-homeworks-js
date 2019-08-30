@@ -13,6 +13,23 @@
         // Спробуйте зробити таксопарк,який ви робили на одній з попередніх завдань. 
         // Але тепер шоб всі машинки були замкнуті. Тобто ззовні ви не могли їх отримати. 
         //  І всі дії,які ви робили до того з машинками (збільшувати потужність і т.д.) 
+        // Зробили половину автопарку ремонт мотору, 
+        // що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
+
+        // // На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
+
+        // // Далі необхідно рати кожну другу машинку (цикл з кроком в 2), 
+        // //та робити їй підвищення потужності двигуна на 10% та ціну на 5%
+
+        // // Після того зробити перевірку досвіду ВСІХ наших водіїв. 
+        // // Якщо досвід водія менший за 5 років, але його вік більший за 25, 
+        // // то необідно відправити його на курси підвищення кваліфікації, 
+        // // що збільшить йому досвід на 1 рік.
+
+        // // Також спробуйте порахувати суму, яку потрібно потратити
+        // // для покупки всіх цих авто в циклі
+
+
         //  зробити на методах, які ми вчора розглянули. 
         // Зробит метод збільшення потужності. 
         // Метод відправки водія на курси. 
@@ -31,6 +48,9 @@
         // Імя, вік, стаж водіння.
         // Створити не менше 7 та не більше 20 машинок.
         // Для початку вкладіть всі наші створені автомобілі в масив cars.
+
+
+
 
 
         function cars() {
@@ -266,7 +286,6 @@
         console.log(carsOutput.getVolume());
         console.log(carsOutput.getPrice());
         console.log(carsOutput.getYear());
-        console.log(carsOutput.getOwner());
         console.log(carsOutput.getOwner().getOwnerName());
         console.log(carsOutput.getOwner().getOwnerAge());
         console.log(carsOutput.getOwner().getOwnerExperience());
@@ -275,114 +294,6 @@
         carsOutput.improveExp();
         console.log(carsOutput.getCarsPrice());;
         console.log(carsOutput.getCars());
-
-        
-
-        // Зробили половину автопарку ремонт мотору, 
-        // що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
-
-
-        // let carsVolumeUpped = cars;
-        // for (let i = 0; i < carsVolumeUpped.length; i += 2) {
-        //     carsVolumeUpped[i].volume = (carsVolumeUpped[i].volume * 1.1).toFixed(2);
-
-        // }
-        // console.log(carsVolumeUpped);
-
-
-        // // На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
-
-        // let newOwners = [{
-        //         name: 'Lesia',
-        //         age: 50,
-        //         experience: 5
-        //     },
-        //     {
-        //         name: 'Tania',
-        //         age: 50,
-        //         experience: 2
-        //     },
-        //     {
-        //         name: 'Marik',
-        //         age: 33,
-        //         experience: 16
-        //     },
-        //     {
-        //         name: 'Shumacher',
-        //         age: 50,
-        //         experience: 37
-        //     },
-        //     {
-        //         name: 'Anna',
-        //         age: 27,
-        //         experience: 7
-        //     },
-        //     {
-        //         name: 'Nicola',
-        //         age: 28,
-        //         experience: 6
-        //     },
-        //     {
-        //         name: 'Nadia',
-        //         age: 33,
-        //         experience: 4
-        //     },
-        //     {
-        //         name: 'Makos',
-        //         age: 63,
-        //         experience: 40
-        //     },
-        //     {
-        //         name: 'Juliana',
-        //         age: 20,
-        //         experience: 1
-        //     }
-        // ];
-
-        // let carsNewOwners = carsVolumeUpped;
-        // for (let i = 0; i < carsNewOwners.length; i += 2) {
-        //     carsNewOwners[i].owner = newOwners[i];
-        // }
-        // console.log(carsNewOwners);
-
-
-
-        // // Далі необхідно рати кожну другу машинку (цикл з кроком в 2), 
-        // //та робити їй підвищення потужності двигуна на 10% та ціну на 5%
-
-
-        // let carsVolumeAndPriceUpped = carsNewOwners;
-        // for (let i = 0; i < carsVolumeAndPriceUpped.length; i += 2) {
-        //     carsVolumeAndPriceUpped[i].volume = (carsVolumeAndPriceUpped[i].volume * 1.1).toFixed(2);
-        //     carsVolumeAndPriceUpped[i].price = (carsVolumeAndPriceUpped[i].price * 1.05);
-        // }
-        // console.log(carsVolumeAndPriceUpped);
-
-
-        // // Після того зробити перевірку досвіду ВСІХ наших водіїв. 
-        // // Якщо досвід водія менший за 5 років, але його вік більший за 25, 
-        // // то необідно відправити його на курси підвищення кваліфікації, 
-        // // що збільшить йому досвід на 1 рік.
-
-        // let carsOwnersExperienceLevelUpped = cars;
-        // for (let i = 0; i < carsOwnersExperienceLevelUpped.length; i++) {
-        //     if (carsOwnersExperienceLevelUpped[i].owner.experience < 5 && carsOwnersExperienceLevelUpped[i].owner.age >
-        //         25) {
-        //         carsOwnersExperienceLevelUpped[i].owner.experience += 1;
-        //     }
-
-        // }
-        // console.log(carsOwnersExperienceLevelUpped);
-
-
-        // // Також спробуйте порахувати суму, яку потрібно потратити
-        // // для покупки всіх цих авто в циклі
-
-        // let sumCarsPrices = 0;
-        // for (let i = 0; i < cars.length; i++) {
-        //     sumCarsPrices += cars[i].price;
-        // }
-        // console.log(sumCarsPrices);
     </script>
 </body>
 
