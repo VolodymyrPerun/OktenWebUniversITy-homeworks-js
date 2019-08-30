@@ -22,7 +22,7 @@
 
 
 
-    // Вивести масив винахідників які народились в 1500-х роках.
+    
 const inventors = [
     {first: 'Albert', last: 'Einstein', year: 1879, passed: 1955},
     {first: 'Isaac', last: 'Newton', year: 1643, passed: 1727},
@@ -38,15 +38,23 @@ const inventors = [
     {first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909}
 ];
 
-
-//     Вивести масив тільки імен винахідників які народились в 1800-х роках
+// Вивести масив винахідників які народились в 1500-х роках.
 
 let filteredByYearsInventors = inventors.filter(function (user) {
 
-    return user.year > 1800
+return (user.year > 1500 && user.year < 1600)
 })
 
 console.log(filteredByYearsInventors )
+
+//     Вивести масив тільки імен винахідників які народились в 1800-х роках
+
+let filteredByYearsInventorsName = inventors.map(function (user) {
+if (user.year > 1800 && user.year < 1900)
+    return user.first
+})
+
+console.log(filteredByYearsInventorsName )
 
 // Вивести масив з імен та прізвищ винахідників (['Albert Einstein', ... ])
 
