@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    let arr = [1, ['22', 212, true, 4], 7, -3, {name: 'Petya', status: false, age: 24}, 55, 6];
+
+    let i = 0;
+    let j = 0;
+    let array = [];
+
+    function recursionArr() {
+        if (i < arr.length) {
+            if (typeof arr[i] === 'number') {
+                array.push(arr[i])
+            }
+            if (j < arr[i].length) {
+                array.push(arr[i][j]);
+                j++;
+
+            }
+            for (let k in arr[i]){
+                array.push(arr[i][k])
+            }
+            i++;
+            recursionArr()
+        }
+    }
+
+    recursionArr();
+    console.log(array);
+
+
+
+</script>
+</body>
+</html>
