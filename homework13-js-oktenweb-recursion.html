@@ -10,6 +10,28 @@
 
     let arr = [1, ['22', 212, true, 4], 7, -3, {name: 'Petya', status: false, age: 24}, 55, 6];
 
+    //Розгорнути багатовимірний масив
+
+    //За допомогою циклу
+    let arryyyy = [1, [22, 212, 3, 4], 7, -3,{name:'Petya',status:false, age:24}, 55, 6];
+    let arrayssss = [];
+    for (let i = 0; i < arryyyy.length; i++) {
+        if (typeof arryyyy[i] === 'number' ) {
+            arrayssss.push(arryyyy[i]);
+        }
+        if (typeof arryyyy[i]!=='number'){
+            for (const j in arryyyy[i]) {
+                arrayssss.push(arryyyy[i][j])
+
+            }
+        }
+
+    }
+
+    console.log(arrayssss);
+
+
+    //За допомогою рекурсії
     let i = 0;
     let j = 0;
     let array = [];
