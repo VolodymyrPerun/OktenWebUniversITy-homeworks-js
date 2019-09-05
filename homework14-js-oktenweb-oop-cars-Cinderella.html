@@ -117,6 +117,7 @@
     let CinderellaArr = [Nadia, Olia, Vera, Veronica, Maria, Ira, Julia, Anastasia,
         Anna, Katia];
 
+
     //   Сторити об'єкт класу "принц" який має поля ім'я, вік, туфелька яку він знайшов.
 
     class Prince {
@@ -133,10 +134,49 @@
 
 
     CinderellaArr.filter(value => {
-        if (value.CinderellasSlipper === Volodymyr.footSize) {
+        if (value.footSize=== Volodymyr.CinderellasSlipper) {
             console.log(value.name);
         }
     });
+
+
+
+    // class Princesses {
+    //     constructor(name, age, size) {
+    //         this.name = name;
+    //         this.age = age;
+    //         this.size = size;
+    //     }
+    // }
+    //
+    // let Anastasia = new Princesses('Anastasia', 25, 38);
+    // let Olia = new Princesses('Olia', 22, 35);
+    // let Katya = new Princesses('Katya', 27, 37);
+    // let Natalya = new Princesses('Natalya', 23, 36);
+    // let Marina = new Princesses('Marina', 21, 39);
+    // let Nadia = new Princesses('Nadia', 29, 42);
+    // let Kristina = new Princesses('Kristina', 35, 40);
+    // let Osaka = new Princesses('Osaka', 20, 43);
+    // let Nafta = new Princesses('Nafta', 19, 41);
+    // let Olenka = new Princesses('Olenka', 32, 44);
+    //
+    // let princessArr = [Anastasia, Olia, Katya, Natalya, Marina, Nadia, Kristina, Osaka, Nafta, Olenka];
+    //
+    //
+    // class Prince {
+    //     constructor(name, age, shoe) {
+    //         this.name = name;
+    //         this.age = age;
+    //         this.shoe = shoe;
+    //
+    //     }
+    // }
+    // let Andrew = new Prince('Andrew',25, 38);
+    // princessArr.filter(value => {
+    //     if (value.size===Andrew.shoe){
+    //         console.log(Andrew.name +' will merry with '+ value.name+  `because the shoe with size: ${value.size} is her`);
+    //     }
+    // });
 
 </script>
 </body>
