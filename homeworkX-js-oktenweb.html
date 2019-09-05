@@ -7,26 +7,74 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        // 1.создать класс которы описывает машину. класс должен содержать 5-6 полей и функцию info()
-        // которая выводит инфрмацию про экземпляр класса (объект который вы создали)
-        // создать 10 различных экземпляров
-        // 2. Унаследовать класс Car в классе SuperCar. Добавить 3 новых поля.
-        // создать 10 различных экземпляров
+<script>
+    // 1.создать класс которы описывает машину. класс должен содержать 5-6 полей и функцию info()
+    // которая выводит инфрмацию про экземпляр класса (объект который вы создали)
+    // создать 10 различных экземпляров
+
+    class car {
+        constructor(mark, model, volume, color, speed) {
+            this.mark = mark;
+            this.model = model;
+            this.volume = volume;
+            this.color = color;
+            this.speed = speed;
+        }
+
+        info() {
+            console.log(`Car mark ${this.mark} information:`);
+            console.log(`model: ${this.model}` + `;  ` + `volume ${this.volume} L` + `;  ` + `color: ${this.color}` + `;  ` + `speed: ${this.speed} km/h`)
+        }
+
+    }
+
+    let BMW = new car('BMW', 'X5', 3.0, 'Black', 280);
+    let Opel = new car('Opel', 'Omega', 2.2, 'Metallic', 220);
+    let Ford = new car('Ford', 'Focus', 1.6, 'Blue', 180);
+    let Nissan = new car('Nissan', 'X-Trail', 2.5, 'Brown', 220);
+    let Chevrolet = new car('Chevrolet', 'Aveo', 1.8, 'Green', 200);
+    let Toyota = new car('Toyota', 'Corolla', 2.0, 'Black', 180);
+    let Dacia = new car('Dacia', 'X-Cross', 2.2, 'Black', 220);
+    let Renault = new car('Renault', 'Logan', 1.2, 'White', 160);
+    let Peugeot = new car('Peugeot ', '308', 1.5, 'Red', 200);
+    let VAZ = new car('VAZ', '2101', 1.2, 'Green', 140);
 
 
-        // на основе предыдущего задания создать классы которые описывают 
-        // - Продукт
-        // - категорию
-        // - Магазин
+    BMW.info();
+    Opel.info();
+    Ford.info();
+    Nissan.info();
+    Chevrolet.info();
+    Toyota.info();
+    Dacia.info();
+    Renault.info();
+    Peugeot.info();
+    VAZ.info();
+
+    // 2. Унаследовать класс Car в классе SuperCar. Добавить 3 новых поля.
+    // создать 10 различных экземпляров
+
+class SuperCar extends car {
+    constructor(mark, model, volume, color, speed, fuel, autopilot, ) {
+
+    }
+}
 
 
-        // 1  
-        //   Протокол пошуку попелюшки
-        //   створити класс попелюшка з полями ім'я, вік, розмір ноги
-        //   Створити 10 попелюшок 
-        //   Сторити об'єкт класу "принц" який має поля ім'я, вік, туфелька яку він знайшов.
-        //   Знайти яка попелюшка його
-        </script>
+    // на основе предыдущего задания создать классы которые описывают
+    // - Продукт
+    // - категорию
+    // - Магазин
+
+
+    // 1
+    //   Протокол пошуку попелюшки
+    //   створити класс попелюшка з полями ім'я, вік, розмір ноги
+    //   Створити 10 попелюшок
+    //   Сторити об'єкт класу "принц" який має поля ім'я, вік, туфелька яку він знайшов.
+    //   Знайти яка попелюшка його
+
+
+</script>
 </body>
 </html>
