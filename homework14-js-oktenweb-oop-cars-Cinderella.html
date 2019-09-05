@@ -54,11 +54,22 @@
     // 2. Унаследовать класс Car в классе SuperCar. Добавить 3 новых поля.
     // создать 10 различных экземпляров
 
-class SuperCar extends car {
-    constructor(mark, model, volume, color, speed, fuel, autopilot, ) {
-
+    class SuperCar extends car {
+        constructor(mark, model, volume, color, speed, fuel, autopilot, autoparking) {
+            super(mark, model, volume, color, speed);
+            this.fuel = fuel;
+            this.autopilot = autopilot;
+            this.autoparking = autoparking;
+        }
     }
-}
+
+    let Tesla = new car('Tesla', 'X', 3.0, 'Black', 420);
+    let Ferrari = new car('Ferrari', 'Enzo', 4.0, 'Red', 420);
+    let Lamborghini = new car('Lamborghini ', 'Diablo', 3.6, 'Red', 380);
+    let Pagani = new car('Pagani', 'Zonda', 3.5, 'Yellow', 420);
+    let Bugatti = new car('Bugatti', 'Veyron', 1.8, 'Blue', 200);
+    let FordMustang = new car('Ford', 'Mustang', 3.0, 'Red', 280);
+   
 
 
     // на основе предыдущего задания создать классы которые описывают
