@@ -66,7 +66,7 @@
 
         info() {
             console.log(`Car mark ${this.mark} information:`);
-            console.log(`model: ${this.model}` + `;  ` + `volume ${this.volume} L` + `;  ` + `color: ${this.color}` + `;  ` + `speed: ${this.speed} km/h` + `;  ` + `fuel: ${this.fuel}` + `;  ` + `autopilot: ${this.autopilot}`+ `;  ` + `autoparking: ${this.autoparking}` )
+            console.log(`model: ${this.model}` + `;  ` + `volume ${this.volume} L` + `;  ` + `color: ${this.color}` + `;  ` + `speed: ${this.speed} km/h` + `;  ` + `fuel: ${this.fuel}` + `;  ` + `autopilot: ${this.autopilot}` + `;  ` + `autoparking: ${this.autoparking}`)
         }
     }
 
@@ -77,7 +77,7 @@
     let Bugatti = new SuperCar('Bugatti', 'Veyron', 1.8, 'Blue', 200, 'patrol', true, false);
     let FordMustang = new SuperCar('Ford', 'Mustang', 3.0, 'Red', 280, 'diesel', false, false);
 
-    
+
     Tesla.info();
     Ferrari.info();
     Lamborghini.info();
@@ -85,17 +85,39 @@
     Bugatti.info();
     FordMustang.info();
 
-    // на основе предыдущего задания создать классы которые описывают
-    // - Продукт
-    // - категорию
-    // - Магазин
 
+    console.log(' ');
+    console.log(' ');
 
-    // 1
+    
+    // 2
     //   Протокол пошуку попелюшки
     //   створити класс попелюшка з полями ім'я, вік, розмір ноги
+
+    class Cinderella {
+        constructor(name, age, footSize) {
+            this.name = name;
+            this.age = age;
+            this.footSize = footSize;
+        }
+    }
+
     //   Створити 10 попелюшок
+    let Nadia = new Cinderella('Nadia', 33, 39);
+    let Olia = new Cinderella('Olia', 22, 36);
+    let Julia = new Cinderella('Julia', 29, 38);
+    let Anna = new Cinderella('Anna', 18, 36);
+    let Vera = new Cinderella('Vera', 55, 39);
+    let Maria = new Cinderella('Maria', 40, 38);
+    let Anastasia = new Cinderella('Anastasia', 23, 39);
+    let Ira = new Cinderella('Ira', 29, 37);
+    let Katia = new Cinderella('Katia', 29, 36);
+    let Veronica = new Cinderella('Veronica', 7, 23);
+
     //   Сторити об'єкт класу "принц" який має поля ім'я, вік, туфелька яку він знайшов.
+
+
+
     //   Знайти яка попелюшка його
 
 
