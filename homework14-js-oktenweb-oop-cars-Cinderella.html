@@ -51,6 +51,9 @@
     Peugeot.info();
     VAZ.info();
 
+
+
+    console.log(' ');
     // 2. Унаследовать класс Car в классе SuperCar. Добавить 3 новых поля.
     // создать 10 различных экземпляров
 
@@ -63,14 +66,19 @@
         }
     }
 
-    let Tesla = new car('Tesla', 'X', 3.0, 'Black', 420);
-    let Ferrari = new car('Ferrari', 'Enzo', 4.0, 'Red', 420);
-    let Lamborghini = new car('Lamborghini ', 'Diablo', 3.6, 'Red', 380);
-    let Pagani = new car('Pagani', 'Zonda', 3.5, 'Yellow', 420);
-    let Bugatti = new car('Bugatti', 'Veyron', 1.8, 'Blue', 200);
-    let FordMustang = new car('Ford', 'Mustang', 3.0, 'Red', 280);
-   
+    let Tesla = new SuperCar('Tesla', 'X', 3.0, 'Black', 420, 'electricity', true, true);
+    let Ferrari = new SuperCar('Ferrari', 'Enzo', 4.0, 'Red', 420, 'patrol', false, false);
+    let Lamborghini = new SuperCar('Lamborghini ', 'Diablo', 3.6, 'Red', 380, 'patrol', false, false);
+    let Pagani = new SuperCar('Pagani', 'Zonda', 3.5, 'Yellow', 420, 'patrol', true, false);
+    let Bugatti = new SuperCar('Bugatti', 'Veyron', 1.8, 'Blue', 200, 'patrol', true, false);
+    let FordMustang = new SuperCar('Ford', 'Mustang', 3.0, 'Red', 280, 'diesel', false, false);
 
+    Tesla.info();
+    Ferrari.info();
+    Lamborghini.info();
+    Pagani.info();
+    Bugatti.info();
+    FordMustang.info();
 
     // на основе предыдущего задания создать классы которые описывают
     // - Продукт
