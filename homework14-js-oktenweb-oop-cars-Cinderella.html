@@ -89,7 +89,7 @@
     console.log(' ');
     console.log(' ');
 
-    
+
     // 2
     //   Протокол пошуку попелюшки
     //   створити класс попелюшка з полями ім'я, вік, розмір ноги
@@ -114,12 +114,29 @@
     let Katia = new Cinderella('Katia', 29, 36);
     let Veronica = new Cinderella('Veronica', 7, 23);
 
+    let CinderellaArr = [Nadia, Olia, Vera, Veronica, Maria, Ira, Julia, Anastasia,
+        Anna, Katia];
+
     //   Сторити об'єкт класу "принц" який має поля ім'я, вік, туфелька яку він знайшов.
 
+    class Prince {
+        constructor(name, age, CinderellasSlipper) {
+            this.name = name;
+            this.age = age;
+            this.CinderellasSlipper = CinderellasSlipper;
+        }
+    }
 
-
+    let Volodymyr = new Prince('Volodymyr', 33, 37);
     //   Знайти яка попелюшка його
 
+
+
+    CinderellaArr.filter(value => {
+        if (value.CinderellasSlipper === Volodymyr.footSize) {
+            console.log(value.name);
+        }
+    });
 
 </script>
 </body>
