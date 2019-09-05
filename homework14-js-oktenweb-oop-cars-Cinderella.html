@@ -52,7 +52,6 @@
     VAZ.info();
 
 
-
     console.log(' ');
     // 2. Унаследовать класс Car в классе SuperCar. Добавить 3 новых поля.
     // создать 10 различных экземпляров
@@ -64,6 +63,11 @@
             this.autopilot = autopilot;
             this.autoparking = autoparking;
         }
+
+        info() {
+            console.log(`Car mark ${this.mark} information:`);
+            console.log(`model: ${this.model}` + `;  ` + `volume ${this.volume} L` + `;  ` + `color: ${this.color}` + `;  ` + `speed: ${this.speed} km/h` + `;  ` + `fuel: ${this.fuel}` + `;  ` + `autopilot: ${this.autopilot}`+ `;  ` + `autoparking: ${this.autoparking}` )
+        }
     }
 
     let Tesla = new SuperCar('Tesla', 'X', 3.0, 'Black', 420, 'electricity', true, true);
@@ -72,6 +76,9 @@
     let Pagani = new SuperCar('Pagani', 'Zonda', 3.5, 'Yellow', 420, 'patrol', true, false);
     let Bugatti = new SuperCar('Bugatti', 'Veyron', 1.8, 'Blue', 200, 'patrol', true, false);
     let FordMustang = new SuperCar('Ford', 'Mustang', 3.0, 'Red', 280, 'diesel', false, false);
+
+
+
 
     Tesla.info();
     Ferrari.info();
