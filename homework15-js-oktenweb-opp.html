@@ -144,6 +144,14 @@ let UsersArr = [Andrew, Vasia, Victor, Stanislav, Sergiy, Nazar, Masha, Volodymy
     });
     console.log(filteredUsersByAge, 'filtered by age >= 50');
 
+    //filtered by login "Long"
+    let filteredUsersByLogin = UsersArr.filter((user) => {
+                return (user.login === 'Long');
+    });
+    console.log(filteredUsersByLogin, 'filtered by login \"Long\"');
+
+    
+
 </script>
 </body>
 </html>
