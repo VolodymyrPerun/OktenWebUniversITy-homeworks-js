@@ -146,11 +146,17 @@ let UsersArr = [Andrew, Vasia, Victor, Stanislav, Sergiy, Nazar, Masha, Volodymy
 
     //filtered by login "Long"
     let filteredUsersByLogin = UsersArr.filter((user) => {
-                return (user.login === 'Long');
+        return (user.login === 'Long');
     });
     console.log(filteredUsersByLogin, 'filtered by login \"Long\"');
 
-    
+    //filtered by password "qwerty"
+    let filteredUsersByPassword = UsersArr.filter((user) => {
+        return (user.password === 'qwerty');
+    });
+    console.log(filteredUsersByPassword, 'filtered by login \"qwerty\"');
+
+
 
 </script>
 </body>
