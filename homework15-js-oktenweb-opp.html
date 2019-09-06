@@ -41,7 +41,7 @@
 
 
     let Volodymyr = new User(111, 'Terminator',
-        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
+        'qwerty', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
     let Andrew = new User(112, 'Long',
         'qwerty', 'Andrew', 26, [' HTML - 79%', ' CSS - 56%', ' JS - 81%'], true);
     let Nazar = new User(113, 'boxxy',
@@ -77,12 +77,42 @@
     // - создать сортировку по каждому полю отдельно
 let UsersArr = [Andrew, Vasia, Victor, Stanislav, Sergiy, Nazar, Masha, Volodymyr, Leonid, Ihor];
 
-
+// Sort by id
     UsersArr.sort((a, b) => {
         return (b.id - a.id);
-
     });
     console.log(UsersArr);
+
+    // Sort by login
+    UsersArr.sort((a, b) => {
+        return (b.login.length - a.login.length);
+    });
+    console.log(UsersArr);
+
+    // Sort by password
+    UsersArr.sort((a, b) => {
+        return (b.password.length - a.password.length);
+    });
+    console.log(UsersArr);
+
+    // Sort by name
+    UsersArr.sort((a, b) => {
+        const x = a.name.toLowerCase();
+        const y = b.name.toLowerCase();
+        if (x < y) {return -1;}
+        if (x > y) {return 1;}
+        return 0;
+    });
+    console.log(UsersArr);
+
+    // Sort by age
+    UsersArr.sort((a, b) => {
+        return (b.age - a.age);
+    });
+    console.log(UsersArr);
+
+
+
 
     // - создать фильтрацию по каждому полю отдельно
     // (протокол фильтрации придумать самостоятельно.
