@@ -156,7 +156,11 @@ let UsersArr = [Andrew, Vasia, Victor, Stanislav, Sergiy, Nazar, Masha, Volodymy
     });
     console.log(filteredUsersByPassword, 'filtered by login \"qwerty\"');
 
-
+    //filtered by password sex(man)
+    let filteredUsersByMan = UsersArr.filter((user) => {
+        return (user.man === false);
+    });
+    console.log(filteredUsersByMan, 'filtered by login \"sex(man)\"');
 
 </script>
 </body>
