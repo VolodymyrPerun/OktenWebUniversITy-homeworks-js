@@ -68,14 +68,24 @@
             super(name, surname);
             this.year = year;
         }
+
+        getCourse () {
+            let date = new Date().getUTCFullYear() - this.year;
+            if (date > 5) {
+                console.log(`Пройшло ${date} років, як ${this.name} ${this.surname} закінчив вуз`);
+            }
+            if (date < 5) {
+                console.log(`Студент ${this.name} ${this.surname} навчається на ${date} курсі вузу`);
+            }
+        }
     }
 
 
-    let John = new Student('John', 'Rambo');
-    let Patrick = new Student('Patrick', 'Swayze');
-    let Jason = new Student('Jason', 'Born');
-    let James = new Student('James', 'Bond');
-    let Barry = new Student('Barry', 'Allen');
+    let John = new Student('John', 'Rambo', 1966);
+    let Patrick = new Student('Patrick', 'Swayze', 1968);
+    let Jason = new Student('Jason', 'Born', 1993);
+    let James = new Student('James', 'Bond', 2017);
+    let Barry = new Student('Barry', 'Allen', 2015);
 
 
     John.getFullName();
@@ -84,8 +94,14 @@
     James.getFullName();
     Barry.getFullName();
 
-    // new Date() get Year;
-    // if <5 $$ >5 -5
+    console.log('');
+
+    John.getCourse();
+    Patrick.getCourse();
+    Jason.getCourse();
+    James.getCourse();
+    Barry.getCourse();
+
 
 </script>
 </body>
