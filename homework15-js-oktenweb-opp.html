@@ -111,10 +111,24 @@ let UsersArr = [Andrew, Vasia, Victor, Stanislav, Sergiy, Nazar, Masha, Volodymy
     });
     console.log(UsersArr);
 
+    // Sort by sex(man) "ladies first"
+    UsersArr.sort((a, b) => {
+        return (a.man - b.man);
+    });
+    console.log(UsersArr);
 
 
 
+    console.log(' ');
+    console.log(' ');
     // - создать фильтрацию по каждому полю отдельно
+
+    //filtered by id >= 117 && id <= 114
+    let filteredUsersById = UsersArr.filter((user) => {
+        return (user.id >= 117 && user.id <= 114)
+    });
+    console.log(filteredUsersById );
+
     // (протокол фильтрации придумать самостоятельно.
     // он будет зависить от ваших полей)
 
