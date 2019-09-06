@@ -44,8 +44,8 @@
         'qwerty', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
     let Andrew = new User(112, 'Long',
         'qwerty', 'Andrew', 26, [' HTML - 79%', ' CSS - 56%', ' JS - 81%'], true);
-    let Nazar = new User(113, 'boxxy',
-        'boxxy', 'Nazar', 22, [' HTML - 0%', ' CSS - 0%', ' JS - 0%'], true);
+    let Victor2 = new User(113, 'boxxy',
+        'boxxy', 'Victor', 22, [' HTML - 0%', ' CSS - 0%', ' JS - 0%'], true);
     let Ihor = new User(114, 'Bekendschic',
         'C2H5OH', 'Ihor', 32, [' HTML - 95%', ' CSS - 90%', ' JS - 91%'], true);
     let Vasia = new User(115, 'Strong',
@@ -67,7 +67,7 @@
     Leonid.toString();
     Sergiy.toString();
     Ihor.toString();
-    Nazar.toString();
+    Victor2.toString();
     Masha.toString();
     Stanislav.toString();
     Victor.toString();
@@ -75,7 +75,7 @@
 
 
     // - создать сортировку по каждому полю отдельно
-let UsersArr = [Andrew, Vasia, Victor, Stanislav, Sergiy, Nazar, Masha, Volodymyr, Leonid, Ihor];
+let UsersArr = [Andrew, Vasia, Victor, Stanislav, Sergiy, Victor2, Masha, Volodymyr, Leonid, Ihor];
 
 // Sort by id
     UsersArr.sort((a, b) => {
@@ -122,15 +122,21 @@ let UsersArr = [Andrew, Vasia, Victor, Stanislav, Sergiy, Nazar, Masha, Volodymy
     console.log(' ');
     console.log(' ');
     // - создать фильтрацию по каждому полю отдельно
+    // (протокол фильтрации придумать самостоятельно.
+    // он будет зависить от ваших полей)
+
 
     //filtered by id >= 117 && id <= 114
     let filteredUsersById = UsersArr.filter((user) => {
-        return (user.id >= 117 && user.id <= 114)
+        return (user.id <= 117 && user.id >= 114)
     });
-    console.log(filteredUsersById );
+    console.log(filteredUsersById , 'filtered by id >= 117 && id <= 114');
 
-    // (протокол фильтрации придумать самостоятельно.
-    // он будет зависить от ваших полей)
+    //filtered by id >= 117 && id <= 114
+    let filteredUsersByName = UsersArr.filter((user) => {
+        return (user.id <= 117 && user.id >= 114)
+    });
+    console.log(filteredUsersByName);
 
 
 </script>
