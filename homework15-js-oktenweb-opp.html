@@ -23,6 +23,7 @@
         }
 
         toString() {
+
             console.log(`User by name ${this.name} information: `);
             console.log(`id: ${this.id}`);
             console.log(`Login: ${this.login}`);
@@ -41,28 +42,48 @@
 
     let Volodymyr = new User(111, 'Terminator',
         'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
-    let Volodymyr = new User(111, 'Terminator',
-        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
-    let Volodymyr = new User(111, 'Terminator',
-        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
-    let Volodymyr = new User(111, 'Terminator',
-        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
-    let Volodymyr = new User(111, 'Terminator',
-        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
-    let Volodymyr = new User(111, 'Terminator',
-        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
-    let Volodymyr = new User(111, 'Terminator',
-        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
-    let Volodymyr = new User(111, 'Terminator',
-        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
-    let Volodymyr = new User(111, 'Terminator',
-        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
-    let Volodymyr = new User(111, 'Terminator',
-        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
+    let Andrew = new User(112, 'Long',
+        'qwerty', 'Andrew', 26, [' HTML - 79%', ' CSS - 56%', ' JS - 81%'], true);
+    let Nazar = new User(113, 'boxxy',
+        'boxxy', 'Nazar', 22, [' HTML - 0%', ' CSS - 0%', ' JS - 0%'], true);
+    let Ihor = new User(114, 'Bekendschic',
+        'C2H5OH', 'Ihor', 32, [' HTML - 95%', ' CSS - 90%', ' JS - 91%'], true);
+    let Vasia = new User(115, 'Strong',
+        'biceps', 'Vasia', 19, [' HTML - 96%', ' CSS - 93%', ' JS - 68%'], true);
+    let Masha = new User(116, 'Terminator',
+        'blond18', 'Masha', 18, [' HTML - 0%', ' CSS - 0%', ' JS - 0%'], false);
+    let Victor = new User(117, 'Fazer',
+        'karisha', 'Victor', 23, [' HTML - 55%', ' CSS - 43%', ' JS - 99%'], true);
+    let Sergiy = new User(118, 'Boss',
+        'money', 'Sergiy', 31, [' HTML - 99%', ' CSS - 99%', ' JS - 99%'], true);
+    let Leonid = new User(119, 'Liolik',
+        'Leonid', 'Leonid', 75, [' HTML - 100%', ' CSS - 6%', ' JS - 2%'], true);
+    let Stanislav = new User(120, 'Sovok',
+        'StalinAlive', 'Stanislav', 99, [' HTML - 0%', ' CSS - 0%', ' JS - 0%'], true);
 
 
     Volodymyr.toString();
+    Andrew.toString();
+    Leonid.toString();
+    Sergiy.toString();
+    Ihor.toString();
+    Nazar.toString();
+    Masha.toString();
+    Stanislav.toString();
+    Victor.toString();
+    Vasia.toString();
+
+
     // - создать сортировку по каждому полю отдельно
+let UsersArr = [Andrew, Vasia, Victor, Stanislav, Sergiy, Nazar, Masha, Volodymyr, Leonid, Ihor];
+
+
+    UsersArr.sort((a, b) => {
+        return (b.id - a.id);
+
+    });
+    console.log(UsersArr);
+
     // - создать фильтрацию по каждому полю отдельно
     // (протокол фильтрации придумать самостоятельно.
     // он будет зависить от ваших полей)
