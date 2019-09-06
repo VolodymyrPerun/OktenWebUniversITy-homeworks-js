@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    // создать класс которыи описывает Пользователя.
+    //     класс должен содержать 7-9 полей и функцию toString()
+
+    class User {
+        constructor(id, login, password, name, age, skills, man) {
+            this.id = id;
+            this.login = login;
+            this.password = password;
+            this.name = name;
+            this.age = age;
+            this.skills = skills;
+            this.man = man;
+        }
+
+        toString() {
+            console.log(`User by name ${this.name} information: `);
+            console.log(`id: ${this.id}`);
+            console.log(`Login: ${this.login}`);
+            console.log(`password: ${this.password}`);
+            console.log(`name: ${this.name}`);
+            console.log(`age: ${this.age}`);
+            console.log(`skills: ${this.skills}`);
+            console.log(`Is ${this.name} a man?: ${this.man}`);
+            console.log(' ');
+        }
+    }
+
+
+    //     создать 10 различных экземпляров.
+
+
+    let Volodymyr = new User(111, 'Terminator',
+        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
+    let Volodymyr = new User(111, 'Terminator',
+        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
+    let Volodymyr = new User(111, 'Terminator',
+        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
+    let Volodymyr = new User(111, 'Terminator',
+        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
+    let Volodymyr = new User(111, 'Terminator',
+        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
+    let Volodymyr = new User(111, 'Terminator',
+        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
+    let Volodymyr = new User(111, 'Terminator',
+        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
+    let Volodymyr = new User(111, 'Terminator',
+        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
+    let Volodymyr = new User(111, 'Terminator',
+        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
+    let Volodymyr = new User(111, 'Terminator',
+        'qwerty007', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
+
+
+    Volodymyr.toString();
+    // - создать сортировку по каждому полю отдельно
+    // - создать фильтрацию по каждому полю отдельно
+    // (протокол фильтрации придумать самостоятельно.
+    // он будет зависить от ваших полей)
+
+
+</script>
+</body>
+</html>
