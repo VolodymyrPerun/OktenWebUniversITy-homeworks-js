@@ -44,8 +44,8 @@
         'qwerty', 'Volodymyr', 33, [' HTML - 89%', ' CSS - 90%', ' JS - 50%'], true);
     let Andrew = new User(112, 'Long',
         'qwerty', 'Andrew', 26, [' HTML - 79%', ' CSS - 56%', ' JS - 81%'], true);
-    let Victor2 = new User(113, 'boxxy',
-        'boxxy', 'Victor', 22, [' HTML - 0%', ' CSS - 0%', ' JS - 0%'], true);
+    let Nazar = new User(113, 'boxxy',
+        'boxxy', 'Nazar', 22, [' HTML - 0%', ' CSS - 0%', ' JS - 0%'], true);
     let Ihor = new User(114, 'Bekendschic',
         'C2H5OH', 'Ihor', 32, [' HTML - 95%', ' CSS - 90%', ' JS - 91%'], true);
     let Vasia = new User(115, 'Strong',
@@ -67,7 +67,7 @@
     Leonid.toString();
     Sergiy.toString();
     Ihor.toString();
-    Victor2.toString();
+    Nazar.toString();
     Masha.toString();
     Stanislav.toString();
     Victor.toString();
@@ -75,7 +75,7 @@
 
 
     // - создать сортировку по каждому полю отдельно
-let UsersArr = [Andrew, Vasia, Victor, Stanislav, Sergiy, Victor2, Masha, Volodymyr, Leonid, Ihor];
+let UsersArr = [Andrew, Vasia, Victor, Stanislav, Sergiy, Nazar, Masha, Volodymyr, Leonid, Ihor];
 
 // Sort by id
     UsersArr.sort((a, b) => {
@@ -132,12 +132,17 @@ let UsersArr = [Andrew, Vasia, Victor, Stanislav, Sergiy, Victor2, Masha, Volody
     });
     console.log(filteredUsersById , 'filtered by id >= 117 && id <= 114');
 
-    //filtered by id >= 117 && id <= 114
+    //filtered by name 'Nazar'
     let filteredUsersByName = UsersArr.filter((user) => {
-        return (user.id <= 117 && user.id >= 114)
+        return (user.name === 'Nazar')
     });
-    console.log(filteredUsersByName);
+    console.log(filteredUsersByName, 'filtered by name \'Nazar\'');
 
+    //filtered by age >= 50
+    let filteredUsersByAge = UsersArr.filter((user) => {
+        return (user.age >= 50)
+    });
+    console.log(filteredUsersByAge, 'filtered by age >= 50');
 
 </script>
 </body>
