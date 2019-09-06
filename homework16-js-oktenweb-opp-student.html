@@ -70,11 +70,12 @@
         }
 
         getCourse () {
-            let date = (new Date().getUTCFullYear() - this.year) -5;
+            let date = (new Date().getUTCFullYear() - this.year);
+            // let date = (new Date().getUTCFullYear() - this.year);
             if (date > 5) {
-                console.log(`Пройшло ${date} років, як ${this.name} ${this.surname} закінчив вуз`);
+                console.log(`Пройшло ${date - 5} років, як ${this.name} ${this.surname} закінчив вуз`);
             }
-            if (date < 5) {
+            if (date < 5 && date >= 1) {
                 console.log(`Студент ${this.name} ${this.surname} навчається на ${date} курсі вузу`);
             }
         }
