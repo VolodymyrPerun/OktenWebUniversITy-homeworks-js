@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    // Реализуйте класс User.
+    //     Этот класс должен иметь следующие свойства:
+    //     name,
+    //     surname.
+    // Класс должен иметь метод getFullName(),
+    // с помощью которого можно вывести одновременно имя и фамилию юзера.
+    // Сделайте 5 юзеров и выведите их в консоль.
+    // Проверте роботу метода.
+
+    class User {
+        constructor(name, surname) {
+            this.name = name;
+            this.surname = surname;
+        }
+
+        getFullName() {
+            console.log(`Новый пользователь -  ${this.name} ${this.surname}`);
+        }
+    }
+
+    let Vasia = new User('Vasia', 'Pupkin');
+    let Bruce = new User('Bruce', 'Wayne');
+    let Master = new User('Master', 'Yoda');
+    let Mister = new User('Mister', 'Bin');
+    let Jack = new User('Jack', 'Sparrow');
+
+
+    Vasia.getFullName();
+    Bruce.getFullName();
+    Master.getFullName();
+    Mister.getFullName();
+    Jack.getFullName();
+
+
+    console.log('');
+    // Реализуйте класс Student (Студент),
+    // который будет наследовать от класса User.
+    //     Этот класс должен иметь следующие свойства:
+    //     name (имя, наследуется от User),
+    //     surname (фамилия, наследуется от User),
+    //     year (год поступления в вуз).
+    // Класс должен иметь метод getFullName() (наследуется от User),
+    // с помощью которого можно вывести одновременно имя и фамилию студента.
+    // Также класс должен иметь метод getCourse(),
+    //     который будет выводить текущий курс студента (от 1 до 5).
+    //     Курс вычисляется так: нужно от текущего года отнять год поступления в вуз.
+    //     Текущий год получите самостоятельно.
+    // Сделайте 5 юзеров и выведите их в консоль.
+    // Проверте роботу методов.
+
+    class Student extends User {
+        constructor(name, surname, year) {
+            super(name, surname);
+            this.year = year;
+        }
+    }
+
+
+</script>
+</body>
+</html>
