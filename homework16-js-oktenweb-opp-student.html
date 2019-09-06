@@ -16,6 +16,7 @@
     // с помощью которого можно вывести одновременно имя и фамилию юзера.
     // Сделайте 5 юзеров и выведите их в консоль.
     // Проверте роботу метода.
+    console.log('Users:');
 
     class User {
         constructor(name, surname) {
@@ -24,7 +25,7 @@
         }
 
         getFullName() {
-            console.log(`Новый пользователь -  ${this.name} ${this.surname}`);
+            console.log(`Full name -  ${this.name} ${this.surname}`);
         }
     }
 
@@ -59,6 +60,8 @@
     //     Текущий год получите самостоятельно.
     // Сделайте 5 студентов и выведите их в консоль.
     // Проверте роботу методов.
+    console.log('Students:');
+
 
     class Student extends User {
         constructor(name, surname, year) {
@@ -67,6 +70,19 @@
         }
     }
 
+
+    let John = new Student('John', 'Rambo');
+    let Bruce = new Student('Bruce', 'Wayne');
+    let Master = new Student('Master', 'Yoda');
+    let Mister = new Student(('Mister', 'Bin');
+    let Jack = new Student(('Jack', 'Sparrow');
+
+
+    John.getFullName();
+    Bruce.getFullName();
+    Master.getFullName();
+    Mister.getFullName();
+    Jack.getFullName();
 
 </script>
 </body>
