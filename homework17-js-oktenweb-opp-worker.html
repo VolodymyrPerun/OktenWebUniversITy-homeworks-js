@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    // Реализуйте класс Worker.
+    //     Этот класс должен иметь следующие свойства:
+    //     name,
+    //     surname,
+    //     rate(ставка за день роботи),
+    //     days(количество отработаних дней).
+    // Класс должен иметь метод getSalary(),
+    // с помощью которого можно вывести зарплату работника.
+    // Зарплата - ето произведение(умножение) ставки rate на
+    // количество отработаних дней days.
+    // Сделайте 5 работников и выведите их в консоль.
+    // Проверте роботу метода.
+
+    class Worker {
+        constructor(name, surname, rate, days) {
+            this.name = name;
+            this.surname = surname;
+            this.rate = rate;
+            this.days = days;
+        }
+
+        getSalary() {
+            console.log(`The worker ${this.name} ${this.surname} earned this month `
+                + (this.rate * this.days) + ' hrn');
+        }
+    }
+
+
+    let Vasia = new Worker('Vasia', 'Pupkin', 800, 20);
+    let Bruce = new Worker('Bruce', 'Wayne', 700, 22);
+    let Master = new Worker('Master', 'Yoda', 1500, 18);
+    let Mister = new Worker('Mister', 'Bin', 550, 21);
+    let Jack = new Worker('Jack', 'Sparrow', 400, 15);
+
+    Vasia.getSalary();
+    Bruce.getSalary();
+    Master.getSalary();
+    Mister.getSalary();
+    Jack.getSalary();
+
+
+</script>
+</body>
+</html>
