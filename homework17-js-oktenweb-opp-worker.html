@@ -9,7 +9,9 @@
 
 
     // Реализуйте класс Worker.
-    //     Этот класс должен иметь следующие свойства:
+    //     Этот класс должен иметь следующие свойства
+    //     (Все свойства должни бить приватними, а для их чтения
+    //     должни бить методи-геттери):
     //     name,
     //     surname,
     //     rate(ставка за день роботи),
@@ -20,18 +22,44 @@
     // количество отработаних дней days.
     // Сделайте 5 работников и выведите их в консоль.
     // Проверте роботу метода.
+    //
 
     class Worker {
         constructor(name, surname, rate, days) {
-            this.name = name;
-            this.surname = surname;
-            this.rate = rate;
-            this.days = days;
+            this._name = name;
+            this._surname = surname;
+            this._rate = rate;
+            this._days = days;
+        }
+
+        get name() {
+            return 'Ops!!! Name is a privet value!!!';
+            //return this._name; // Виводим имя с приватности
+        }
+
+        get surname() {
+            return 'Ops!!! Surname is a privet value!!!';
+        }
+
+        get rate() {
+            return 'Ops!!! Rate is a privet value!!!';
+        }
+
+        set rate(newRate) {
+            return this._rate = newRate;
+        }
+
+        get days() {
+            return 'Ops!!! Days is a privet value!!!';
+        }
+
+        set days(newDays) {
+            return this._days = newDays;
         }
 
         getSalary() {
-            console.log(`The worker ${this.name} ${this.surname} earned this month `
-                + (this.rate * this.days) + ' hrn');
+            console.log(`The worker ${this._name} ${this._surname} earned this month `
+                + (this._rate * this._days) + ' hrn');
         }
     }
 
@@ -47,6 +75,21 @@
     Master.getSalary();
     Mister.getSalary();
     Jack.getSalary();
+
+    console.log('');
+
+    console.log(Vasia.name);
+    console.log(Vasia.surname);
+    console.log(Vasia.rate);
+    console.log(Vasia.days);
+
+    console.log('');
+
+    Vasia.newRate = 3000;
+    console.log(`Worker ` + Vasia._name + ` new rate: ` + Vasia.newRate);
+
+    Vasia.newDays = 14;
+    console.log(`Worker ` + Vasia._name + ` new days: ` + Vasia.newDays);
 
 
 </script>
