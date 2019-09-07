@@ -31,7 +31,7 @@
     console.log(arrayssss);
 
 
-    //За допомогою рекурсії
+    //За допомогою рекурсії 1
     let i = 0;
     let j = 0;
     let array = [];
@@ -57,7 +57,31 @@
     recursionArr();
     console.log(array);
 
+    //За допомогою рекурсії 2 виведення елементів
 
+    let arr2 = [1, {name: "Vasya", car: "true"}, null, 3, [5, [2, [2,5,5,['HELOO', 'CHATIK'],3,5]], -1, 87], 9];
+
+    function recursator3000(arrayToOpen) {
+        if (!Array.isArray(arrayToOpen)) return;
+
+        arrayToOpen.forEach( value => {
+
+            if (Array.isArray(value)) {
+                recursator3000(value);
+                return; // STOP ITERATOR
+            }
+
+            if (typeof value === 'object' && value !== null) {
+                let arrOfValuer = Object.values(value);
+                recursator3000(arrOfValuer);
+                return; // STOP ITERATOR
+            }
+
+            console.log(value);
+        })
+    }
+
+    recursator3000(arr2);
 
 </script>
 </body>
