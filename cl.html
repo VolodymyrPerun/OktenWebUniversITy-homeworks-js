@@ -6,16 +6,22 @@
 </head>
 <body>
 <script>
+
     function userCard(number) {
 
         let getCardOptions = {
-            balance : 100,
+            balance: 100,
             transactionLimit: 100,
-            historyLogs : [],
+            historyLogs: [],
             key: number
         };
 
         return {
+
+            getCardOptions() {
+                return getCardOptions
+            },
+
             putCredits: function (money) {
                 getCardOptions.balance += money;
                 return getCardOptions.balance
@@ -23,19 +29,26 @@
 
             takeCredits: function (moneyTakes) {
                 if (getCardOptions.balance >= moneyTakes &&
-                    getCardOptions.transactionLimit <= moneyTakes) {
+                    getCardOptions.transactionLimit >= moneyTakes) {
                     return getCardOptions.balance - moneyTakes
-                }
-                else return  console.log('transaction limit exceeded !')
+                } else return console.log('Error transaction limit exceeded !')
             },
 
+            setTransactionLimit(transactionLimit) {
+                return getCardOptions.transactionLimit = transactionLimit
+            }
         }
     }
 
     let card1 = userCard(1);
+    let card2 = userCard(2);
 
-    console.log( card1.putCredits(100));
-    console.log( card1.takeCredits(100));
+    console.log(card1.getCardOptions());
+    console.log(card2.getCardOptions());
+
+    console.log(card1.putCredits(50));
+    console.log(card1.takeCredits(200));
+    console.log(card1.setTransactionLimit(30));
 
 
 </script>
