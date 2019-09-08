@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function userCard(number) {
+
+        let getCardOptions = {
+            balance : 100,
+            transactionLimit: 100,
+            historyLogs : [],
+            key: number
+        };
+
+        return {
+            putCredits: function (money) {
+                getCardOptions.balance += money;
+                return getCardOptions.balance
+            },
+
+            takeCredits: function (moneyTakes) {
+                if (getCardOptions.balance >= moneyTakes &&
+                    getCardOptions.transactionLimit <= moneyTakes) {
+                    return getCardOptions.balance - moneyTakes
+                }
+                else return  console.log('transaction limit exceeded !')
+            },
+
+        }
+    }
+
+    let card1 = userCard(1);
+
+    console.log( card1.putCredits(100));
+    console.log( card1.takeCredits(100));
+
+
+</script>
+</body>
+</html>
