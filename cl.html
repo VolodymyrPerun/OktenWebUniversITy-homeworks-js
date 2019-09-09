@@ -9,12 +9,17 @@
 
     function userCard(number) {
 
+        let operationType;
+        let credits;
+        let operationTime;
+
         let getCardOptions = {
             balance: 100,
             transactionLimit: 100,
             historyLogs: [],
             key: number
         };
+
 
         return {
 
@@ -24,17 +29,77 @@
 
             putCredits: function (money) {
                 getCardOptions.balance += money;
+
+                    let arr1 = [];
+                  arr1.push((getCardOptions.historyLogs.operationType = 'Receive credits'),
+                        (getCardOptions.historyLogs.credits = getCardOptions.balance),
+                        (getCardOptions.historyLogs.operationTime =
+                            ((new Date().getUTCDate().toString())
+                                + '/' + (new Date().getUTCMonth().toString())
+                                + '/' + (new Date().getUTCFullYear().toString())
+                                + ', ' + (new Date().getUTCHours().toString())
+                                + ':' + (new Date().getUTCMinutes().toString())
+                                + ':' + (new Date().getUTCSeconds().toString()))));
+
+
+                getCardOptions.historyLogs.concat(arr1);
+                // getCardOptions.historyLogs.operationType = 'Receive credits';
+                // getCardOptions.historyLogs.credits = getCardOptions.balance;
+                // getCardOptions.historyLogs.operationTime =
+                //     ((new Date().getUTCDate().toString())
+                //         + '/' + (new Date().getUTCMonth().toString())
+                //         + '/' + (new Date().getUTCFullYear().toString())
+                //         + ', ' + (new Date().getUTCHours().toString())
+                //         + ':' + (new Date().getUTCMinutes().toString())
+                //         + ':' + (new Date().getUTCSeconds().toString()));
+
                 return getCardOptions.balance
             },
 
             takeCredits: function (moneyTakes) {
                 if (getCardOptions.balance >= moneyTakes &&
                     getCardOptions.transactionLimit >= moneyTakes) {
+
+                    let arr2 = [];
+                    arr2.push((getCardOptions.historyLogs.operationType = 'Withdrawal of credits'),
+                        (getCardOptions.historyLogs.credits = getCardOptions.balance),
+                        (getCardOptions.historyLogs.operationTime =
+                            ((new Date().getUTCDate().toString())
+                                + '/' + (new Date().getUTCMonth().toString())
+                                + '/' + (new Date().getUTCFullYear().toString())
+                                + ', ' + (new Date().getUTCHours().toString())
+                                + ':' + (new Date().getUTCMinutes().toString())
+                                + ':' + (new Date().getUTCSeconds().toString()))));
+
+
+                    getCardOptions.historyLogs.concat(arr2);
+
+                    // getCardOptions.historyLogs.operationType = 'Withdrawal of credits';
+                    // getCardOptions.historyLogs.credits = getCardOptions.balance;
+                    // getCardOptions.historyLogs.operationTime =
+                    //     ((new Date().getUTCDate().toString())
+                    //         + '/' + (new Date().getUTCMonth().toString())
+                    //         + '/' + (new Date().getUTCFullYear().toString())
+                    //         + ', ' + (new Date().getUTCHours().toString())
+                    //         + ':' + (new Date().getUTCMinutes().toString())
+                    //         + ':' + (new Date().getUTCSeconds().toString()));
+
                     return getCardOptions.balance - moneyTakes
                 } else return console.log('Error transaction limit exceeded !')
             },
 
             setTransactionLimit(transactionLimit) {
+
+                // getCardOptions.historyLogs.operationType = 'Transaction limit change';
+                // getCardOptions.historyLogs.credits = getCardOptions.balance;
+                // getCardOptions.historyLogs.operationTime =
+                //     ((new Date().getUTCDate().toString())
+                //         + '/' + (new Date().getUTCMonth().toString())
+                //         + '/' + (new Date().getUTCFullYear().toString())
+                //         + ', ' + (new Date().getUTCHours().toString())
+                //         + ':' + (new Date().getUTCMinutes().toString())
+                //         + ':' + (new Date().getUTCSeconds().toString()));
+
                 return getCardOptions.transactionLimit = transactionLimit
             }
         }
@@ -46,10 +111,13 @@
     console.log(card1.getCardOptions());
     console.log(card2.getCardOptions());
 
-    console.log(card1.putCredits(50));
-    console.log(card1.takeCredits(200));
-    console.log(card1.setTransactionLimit(30));
+    console.log(card1.putCredits(3540));
+    console.log(card1.takeCredits(600));
+    console.log(card1.setTransactionLimit(18800));
 
+    console.log(card2.putCredits(155));
+    console.log(card2.takeCredits(55));
+    console.log(card2.setTransactionLimit(800));
 
 </script>
 </body>
