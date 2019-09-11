@@ -60,7 +60,7 @@
                     getCardOptions.historyLogs.push(arr2);
 
                     return getCardOptions.balance - moneyTakes
-                } else return console.log('Error transaction limit exceeded !')
+                } else return console.error('Error transaction limit exceeded !')
             },
 
             setTransactionLimit(transactionLimit) {
@@ -90,9 +90,9 @@
     console.log(card1.takeCredits(56));
     console.log(card1.setTransactionLimit(1888));
 
-    console.log(card2.putCredits(230));
-    console.log(card2.takeCredits(30));
-    console.log(card2.setTransactionLimit(800));
+    console.log(card2.putCredits(30));
+    console.log(card2.takeCredits(300));
+    console.log(card2.setTransactionLimit(100));
 
 </script>
 </body>
