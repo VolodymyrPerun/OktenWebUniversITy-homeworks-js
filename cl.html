@@ -64,6 +64,19 @@
             },
 
             setTransactionLimit(transactionLimit) {
+                
+                let arr3 = {operationType : 'Transaction limit change',
+                    credits : getCardOptions.balance,
+                    operationTime :
+                        ((new Date().getUTCDate().toString())
+                            + '/' + (new Date().getUTCMonth().toString())
+                            + '/' + (new Date().getUTCFullYear().toString())
+                            + ', ' + (new Date().getUTCHours().toString())
+                            + ':' + (new Date().getUTCMinutes().toString())
+                            + ':' + (new Date().getUTCSeconds().toString()))};
+
+
+                getCardOptions.historyLogs.push(arr3);
 
                
                 return getCardOptions.transactionLimit = transactionLimit
