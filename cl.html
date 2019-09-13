@@ -7,96 +7,125 @@
 <body>
 <script>
 
-    function userCard(number) {
+    function userCard(cardId) {
 
-        let getCardOptions = {
+        let card = {
             balance: 100,
             transactionLimit: 100,
             historyLogs: [],
-            key: number
+            key: cardId
         };
 
         return {
 
             getCardOptions() {
-                return getCardOptions
+                return card
             },
 
             putCredits: function (money) {
-                getCardOptions.balance += money;
+                card.balance += money;
 
 
-                 let arr1 = {operationType : 'Receive credits',
-                    credits : getCardOptions.balance,
-                    operationTime :
+                let arr1 = {
+                    operationType: 'Receive credits',
+                    credits: money,
+                    operationTime:
                         ((new Date().getUTCDate().toString())
                             + '/' + (new Date().getUTCMonth().toString())
                             + '/' + (new Date().getUTCFullYear().toString())
                             + ', ' + (new Date().getUTCHours().toString())
                             + ':' + (new Date().getUTCMinutes().toString())
-                            + ':' + (new Date().getUTCSeconds().toString()))};
+                            + ':' + (new Date().getUTCSeconds().toString()))
+                };
 
 
-                getCardOptions.historyLogs.push(arr1);
+                card.historyLogs.push(arr1);
 
-                return getCardOptions.balance
+                return card.balance
             },
 
             takeCredits: function (moneyTakes) {
-                if (getCardOptions.balance >= moneyTakes &&
-                    getCardOptions.transactionLimit >= moneyTakes) {
+                if (card.balance >= moneyTakes &&
+                    card.transactionLimit >= moneyTakes) {
 
-                    let arr2 = {operationType : 'Withdrawal of credits',
-                        credits : getCardOptions.balance,
-                        operationTime :
+                    let arr2 = {
+                        operationType: 'Withdrawal of credits',
+                        credits: moneyTakes,
+                        operationTime:
                             ((new Date().getUTCDate().toString())
                                 + '/' + (new Date().getUTCMonth().toString())
                                 + '/' + (new Date().getUTCFullYear().toString())
                                 + ', ' + (new Date().getUTCHours().toString())
                                 + ':' + (new Date().getUTCMinutes().toString())
-                                + ':' + (new Date().getUTCSeconds().toString()))};
+                                + ':' + (new Date().getUTCSeconds().toString()))
+                    };
 
+                    card.historyLogs.push(arr2);
 
-                    getCardOptions.historyLogs.push(arr2);
-
-                    return getCardOptions.balance - moneyTakes
+                    return card.balance - moneyTakes
                 } else return console.error('Error transaction limit exceeded !')
             },
 
             setTransactionLimit(transactionLimit) {
-                
-                let arr3 = {operationType : 'Transaction limit change',
-                    credits : getCardOptions.balance,
-                    operationTime :
+
+                let arr3 = {
+                    operationType: 'Transaction limit change',
+                    credits: transactionLimit,
+                    operationTime:
                         ((new Date().getUTCDate().toString())
                             + '/' + (new Date().getUTCMonth().toString())
                             + '/' + (new Date().getUTCFullYear().toString())
                             + ', ' + (new Date().getUTCHours().toString())
                             + ':' + (new Date().getUTCMinutes().toString())
-                            + ':' + (new Date().getUTCSeconds().toString()))};
+                            + ':' + (new Date().getUTCSeconds().toString()))
+                };
+
+                card.historyLogs.push(arr3);
+
+                return card.transactionLimit = transactionLimit
+
+            },
+
+            transferCredits: (sum, cardToReceived) => {
+                card.historyLogs[1].credits = sum;
+                if (sum > card.transactionLimit || sum > card.balance) {
+                    throw new Error('Its more then your balance or your limit')
+                }
+
+                card.balance = card.balance - sum - (sum * 0.05);
+                cardToReceived.putCredits(sum)
+            },
 
 
-                getCardOptions.historyLogs.push(arr3);
-
-               
-                return getCardOptions.transactionLimit = transactionLimit
-            }
         }
     }
 
     let card1 = userCard(1);
     let card2 = userCard(2);
+    let card3 = userCard(3);
 
-    console.log(card1.getCardOptions());
-    console.log(card2.getCardOptions());
 
-    console.log(card1.putCredits(200));
-    console.log(card1.takeCredits(50));
-    console.log(card1.setTransactionLimit(1800));
+    console.log(card1.putCredits(110));
+    console.log(card1.takeCredits(33));
+    console.log(card1.setTransactionLimit(1400));
+    console.log('');
 
     console.log(card2.putCredits(40));
     console.log(card2.takeCredits(200));
     console.log(card2.setTransactionLimit(140));
+    console.log('');
+
+    console.log(card3.putCredits(200));
+    console.log(card3.takeCredits(20));
+    console.log(card3.setTransactionLimit(1400));
+    console.log('');
+
+    card3.transferCredits(31, card1);
+
+    console.log(card1.getCardOptions());
+    console.log(card2.getCardOptions());
+    console.log(card3.getCardOptions());
+    console.log('');
 
 </script>
 </body>

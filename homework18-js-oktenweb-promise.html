@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function f(a, b) {
+        return new Promise((resolve, reject) => {
+            let result = a + b;
+            // result < 15 ? reject('ERROR') : resolve(result)
+
+            if (result < 15) {
+                reject('Result is less than 15')
+            } else {
+                resolve(result)
+            }
+        })
+    }
+
+    f(10, 10)
+        .then(value => {
+            console.log(value);
+            return value + 100
+        })
+        .then(value => {
+            console.log(value);
+            return value + 5
+        })
+        .then(value => {
+            console.log(value);
+        })
+        .catch(reason => {
+            console.error(reason);
+        });
+
+</script>
+</body>
+</html>
