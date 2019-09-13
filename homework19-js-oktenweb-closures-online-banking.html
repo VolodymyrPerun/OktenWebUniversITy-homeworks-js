@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-</head>
-<body>
-<script>
+    </head>
+    <body>
+    <script>
+
+    ///////////////////////////////////1.///////////////////////////////////
 
     function userCard(cardId) {
 
@@ -127,7 +129,52 @@
     console.log('');
 
 
-    
+    ///////////////////////////////////2.///////////////////////////////////
+
+    let userCard1 = card1.getCardOptions();
+    let userCard2 = card2.getCardOptions();
+    let userCard3 = card3.getCardOptions();
+
+    function userAccount(userName) {
+        let user = {
+            name: userName,
+            cards: []
+        };
+        return {
+            getUserAccount: () => {
+                return user
+            },
+            addCard: (card1, card2, card3) => {
+                user.cards = [card1, card2, card3]
+            },
+
+            getCardById: (key) => {
+
+                if (key === userCard1.key) {
+                    return userCard1
+                }
+                if (key === userCard2.key) {
+                    return userCard2
+                }
+                if (key === userCard3.key) {
+                    return userCard3
+                }
+                throw new Error('Enter correct cardId , please!')
+
+            }
+        }
+    }
+
+    let bob = userAccount('Bob');
+    bob.addCard(userCard1, userCard2, userCard3);
+    console.log(bob.getUserAccount());
+    console.log(bob.getCardById(1));
+
+    card1.putCredits(500);
+    card1.setTransactionLimit(800);
+    card1.transferCredits(300, card2);
+    card2.takeCredits(50);
+    console.log(card1.getCardOptions());
 
 </script>
 </body>
