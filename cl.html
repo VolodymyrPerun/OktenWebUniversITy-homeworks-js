@@ -25,7 +25,6 @@
             putCredits: function (money) {
                 card.balance += money;
 
-
                 let arr1 = {
                     operationType: 'Receive credits',
                     credits: money,
@@ -86,14 +85,14 @@
 
             },
 
-            transferCredits: (sum, cardToReceived) => {
-                card.historyLogs[1].credits = sum;
-                if (sum > card.transactionLimit || sum > card.balance) {
-                    throw new Error('Its more then your balance or your limit')
+            transferCredits: (transferredCredits, cardToReceived) => {
+                card.historyLogs.credits = transferredCredits;
+                if (transferredCredits > card.transactionLimit || transferredCredits > card.balance) {
+                    throw new Error('It\'s more then your balance or your limit')
                 }
 
-                card.balance = card.balance - sum - (sum * 0.05);
-                cardToReceived.putCredits(sum)
+                card.balance = card.balance - transferredCredits - (transferredCredits * 0.05);
+                cardToReceived.putCredits(transferredCredits)
             },
 
 
@@ -117,15 +116,18 @@
 
     console.log(card3.putCredits(200));
     console.log(card3.takeCredits(20));
-    console.log(card3.setTransactionLimit(1400));
+    console.log(card3.setTransactionLimit(1300));
     console.log('');
 
-    card3.transferCredits(31, card1);
+    card3.transferCredits(231, card1);
 
     console.log(card1.getCardOptions());
     console.log(card2.getCardOptions());
     console.log(card3.getCardOptions());
     console.log('');
+
+
+    
 
 </script>
 </body>
