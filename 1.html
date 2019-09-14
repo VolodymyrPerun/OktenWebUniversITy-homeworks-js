@@ -26,7 +26,7 @@
             let haveDinner = new Promise((resolve, reject, time) => {
                 time = 500;
                 if (time < 500) {
-                    reject('Голодний!')
+                    reject('Зголоднів!')
                 } else {
                     setTimeout(() => {
                         resolve('Поснідав')
@@ -77,10 +77,10 @@
                                     let workingBeforeBreakfast = new Promise((resolve, reject, headache) => {
                                         headache = false;
                                         if (headache === true) {
-                                            reject('Болить голова!')
+                                            reject('Боліла голова!')
                                         } else {
                                             setTimeout(() => {
-                                                resolve('Працював')
+                                                resolve('Працював до обіду')
                                             }, 4000);
                                         }
 
@@ -108,10 +108,15 @@
                                                     console.log(value);
                                                 })
                                                 .then(() => {
-                                                    let workingAfterBreakfast = new Promise((resolve, reject) => {
-                                                        setTimeout(() => {
-                                                            resolve('Працював')
-                                                        }, 4000);
+                                                    let workingAfterBreakfast = new Promise((resolve, reject, toothPaine) => {
+                                                        toothPaine = false;
+                                                        if (toothPaine === true) {
+                                                            reject('Болів зуб!')
+                                                        } else {
+                                                            setTimeout(() => {
+                                                                resolve('Працював після обіду')
+                                                            }, 4000);
+                                                        }
 
                                                     });
 
@@ -120,10 +125,15 @@
                                                             console.log(value);
                                                         })
                                                         .then(() => {
-                                                            let goingHome = new Promise((resolve, reject) => {
-                                                                setTimeout(() => {
-                                                                    resolve('Поїхав додому')
-                                                                }, 1000);
+                                                            let goingHome = new Promise((resolve, reject, wheelDown) => {
+                                                                wheelDown = false;
+                                                                if (wheelDown === true) {
+                                                                    reject('Спустило колесо!')
+                                                                } else {
+                                                                    setTimeout(() => {
+                                                                        resolve('Поїхав додому')
+                                                                    }, 2000);
+                                                                }
 
                                                             });
 
@@ -132,10 +142,15 @@
                                                                     console.log(value);
                                                                 })
                                                                 .then(() => {
-                                                                    let getStudy = new Promise((resolve, reject) => {
-                                                                        setTimeout(() => {
-                                                                            resolve('Повчився')
-                                                                        }, 3000);
+                                                                    let getStudy = new Promise((resolve, reject, noWireless ) => {
+                                                                        noWireless = false;
+                                                                        if (noWireless  === true) {
+                                                                            reject('Не було інтернету!')
+                                                                        } else {
+                                                                            setTimeout(() => {
+                                                                                resolve('Повчився')
+                                                                            }, 3000);
+                                                                        }
 
                                                                     });
 
