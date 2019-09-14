@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise Hell</title>
+</head>
+<body>
+<script>
+    let wakeUp = new Promise((resolve, reject, time) => {
+        time = 1000;
+        if (time > 1000) {
+            reject('Проспав!')
+        } else {
+            setTimeout(() => {
+                resolve('Прокинувся')
+            }, time);
+        }
+
+    });
+
+    wakeUp
+        .then(value => {
+            console.log(value);
+        })
+        .then(() => {
+            let haveDinner = new Promise((resolve, reject, time) => {
+                time = 500;
+                if (time < 500) {
+                    reject('Голодний!')
+                } else {
+                    setTimeout(() => {
+                        resolve('Поснідав')
+                    }, time);
+                }
+
+            });
+
+            haveDinner
+                .then(value => {
+                    console.log(value);
+                })
+                .then(() => {
+                    let closesUp = new Promise((resolve, reject, time) => {
+                        time = 1000;
+                        if (time > 1000) {
+                            reject('Не встиг на автобус!')
+                        } else {
+                            setTimeout(() => {
+                                resolve('Зібрався')
+                            }, time);
+                        }
+
+                    });
+
+                    closesUp
+                        .then(value => {
+                            console.log(value);
+                        })
+                        .then(() => {
+                            let goingToWork = new Promise((resolve, reject, roadClean) => {
+                                roadClean = true;
+                                if (roadClean !== true) {
+                                    reject('Встали в заторі!')
+                                } else {
+                                    setTimeout(() => {
+                                        resolve('Добрався до роботи')
+                                    }, 2000);
+                                }
+
+                            });
+
+                            goingToWork
+                                .then(value => {
+                                    console.log(value);
+                                })
+                                .then(() => {
+                                    let workingBeforeBreakfast = new Promise((resolve, reject, headache) => {
+                                        headache = false;
+                                        if (headache === true) {
+                                            reject('Болить голова!')
+                                        } else {
+                                            setTimeout(() => {
+                                                resolve('Працював')
+                                            }, 4000);
+                                        }
+
+                                    });
+
+                                    workingBeforeBreakfast
+                                        .then(value => {
+                                            console.log(value);
+                                        })
+                                        .then(() => {
+                                            let haveBreakfast = new Promise((resolve, reject) => {
+                                                headache = false;
+                                                if (headache === true) {
+                                                    reject('Болить голова!')
+                                                } else {
+                                                    setTimeout(() => {
+                                                        resolve('Працював')
+                                                    }, 4000);
+                                                }
+                                                setTimeout(() => {
+                                                    resolve('Пообідав')
+                                                }, 1000);
+
+                                            });
+
+                                            haveBreakfast
+                                                .then(value => {
+                                                    console.log(value);
+                                                })
+                                                .then(() => {
+                                                    let workingAfterBreakfast = new Promise((resolve, reject) => {
+                                                        setTimeout(() => {
+                                                            resolve('Працював')
+                                                        }, 4000);
+
+                                                    });
+
+                                                    workingAfterBreakfast
+                                                        .then(value => {
+                                                            console.log(value);
+                                                        })
+                                                        .then(() => {
+                                                            let goingHome = new Promise((resolve, reject) => {
+                                                                setTimeout(() => {
+                                                                    resolve('Поїхав додому')
+                                                                }, 1000);
+
+                                                            });
+
+                                                            goingHome
+                                                                .then(value => {
+                                                                    console.log(value);
+                                                                })
+                                                                .then(() => {
+                                                                    let getStudy = new Promise((resolve, reject) => {
+                                                                        setTimeout(() => {
+                                                                            resolve('Повчився')
+                                                                        }, 3000);
+
+                                                                    });
+
+                                                                    getStudy
+                                                                        .then(value => {
+                                                                            console.log(value);
+                                                                        })
+                                                                        .then(() => {
+                                                                            let havingSleeping = new Promise((resolve, reject) => {
+                                                                                setTimeout(() => {
+                                                                                    resolve('Ліг спати')
+                                                                                }, 7000);
+
+                                                                            });
+
+                                                                            havingSleeping
+                                                                                .then(value => {
+                                                                                    console.log(value);
+                                                                                })
+                                                                                .catch(reason => {
+                                                                                    console.error(reason);
+                                                                                });
+
+                                                                        })
+                                                                        .catch(reason => {
+                                                                            console.error(reason);
+                                                                        });
+                                                                })
+                                                                .catch(reason => {
+                                                                    console.error(reason);
+                                                                });
+                                                        })
+                                                        .catch(reason => {
+                                                            console.error(reason);
+                                                        });
+                                                })
+                                                .catch(reason => {
+                                                    console.error(reason);
+                                                });
+                                        })
+                                        .catch(reason => {
+                                            console.error(reason);
+                                        });
+                                })
+                                .catch(reason => {
+                                    console.error(reason);
+                                });
+                        })
+                        .catch(reason => {
+                            console.error(reason);
+                        });
+                })
+                .catch(reason => {
+                    console.error(reason);
+                });
+        })
+        .catch(reason => {
+            console.error(reason);
+        });
+</script>
+</body>
+</html>
