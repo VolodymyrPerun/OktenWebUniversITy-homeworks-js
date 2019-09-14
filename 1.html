@@ -144,7 +144,7 @@
                                                                 .then(() => {
                                                                     let getStudy = new Promise((resolve, reject, noWireless ) => {
                                                                         noWireless = false;
-                                                                        if (noWireless  === true) {
+                                                                        if (noWireless  !== false) {
                                                                             reject('Не було інтернету!')
                                                                         } else {
                                                                             setTimeout(() => {
@@ -159,10 +159,15 @@
                                                                             console.log(value);
                                                                         })
                                                                         .then(() => {
-                                                                            let havingSleeping = new Promise((resolve, reject) => {
-                                                                                setTimeout(() => {
-                                                                                    resolve('Ліг спати')
-                                                                                }, 7000);
+                                                                            let havingSleeping = new Promise((resolve, reject, haveNotSleeping) => {
+                                                                                haveNotSleeping = true;
+                                                                                if (haveNotSleeping  !== false) {
+                                                                                    reject('Було безсоння!')
+                                                                                } else {
+                                                                                    setTimeout(() => {
+                                                                                        resolve('Ліг спати')
+                                                                                    }, 7000);
+                                                                                }
 
                                                                             });
 
