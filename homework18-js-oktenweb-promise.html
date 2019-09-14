@@ -60,14 +60,37 @@
 
     let promise = new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve('FDFSDF')
-        }, 1000)
+            resolve('Прокинувся')
+        }, 1000);
+        setTimeout(() => {
+            resolve('Прокинувся')
+        }, 2000)
     });
 
     promise
         .then(value => {
             console.log(value);
-        })
+        });
+        promise
+            .then(value => {
+        console.log(value);
+    });
+
+
+    // function printNumbers(from, to) {
+    //     let current = from;
+    //
+    //     setTimeout(function go() {
+    //         console.log(current);
+    //         if (current < to) {
+    //             setTimeout(go, 1000);
+    //         }
+    //         current++;
+    //     }, 1000);
+    // }
+    //
+    // // использование:
+    // printNumbers(5, 10);
 
 </script>
 </body>
