@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background:
+         url('https://i.pinimg.com/474x/91/db/e0/91dbe0c16b8968f04525212603ad4360--live-wallpapers-hd-wallpaper.jpg')
+          fixed no-repeat top / cover">
+<pre id="demo" style="color: lightgreen; background: black;
+ margin: 50vh 25%; text-align: center; font-family: 'Trebuchet MS' ;"></pre>
+<script>
+
+    // Зробити аналог друкарської машинки.
+    //     Маємо рандомну стрічку будь якої довжини.
+    //     Потрібно зробитифункцію, яка виводить в консоль цю стрічку
+    //     по букві з зактримкою від 0,1 до 1 секунди.
+    //     Що б симулювати написання стрічки реальним юзером.
+    //     Тобто приймається стрічка і виводиться в консоль з рандомною зактримкою.
+    //
+    //     Таска є підступна. Тут цикли не спрацюють.
+    //     Потрібні рекурсії!
+
+
+    let text = 'Зробити аналог друкарської машинки.\n' +
+        'Маємо рандомну стрічку будь якої довжини.\n' +
+        'Потрібно зробитифункцію, яка виводить в консоль цю стрічку по букві' +
+        ' з зактримкою від 0,1 до 1 секунди. Що б симулювати написання стрічки реальним юзером. \n' +
+        'Тобто приймається стрічка і виводиться в консоль з рандомною зактримкою.\n' +
+        '\n' +
+        'Таска є підступна. Тут цикли не спрацюють. \n' +
+        'Потрібні рекурсії!';
+
+
+    function writeTextByJS(id, text, speed) {
+
+        let ele = document.getElementById(id);
+        let txt = text.split("");
+
+        let interval = setInterval(function () {
+
+            if (!txt[0]) {
+
+                return clearInterval(interval);
+            }
+            ele.innerHTML += txt.shift();
+        }, speed !== undefined ? speed : 100);
+
+        return false;
+    }
+
+    writeTextByJS('demo', text, 200);
+
+</script>
+</body>
+</html>
