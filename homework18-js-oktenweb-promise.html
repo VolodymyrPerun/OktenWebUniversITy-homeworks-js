@@ -28,55 +28,125 @@
 
 
 
-    function f(a, b) {
-        return new Promise((resolve, reject) => {
-            let result = a + b;
-            // result < 15 ? reject('ERROR') : resolve(result)
-
-            if (result < 15) {
-                reject('Result is less than 15')
-            } else {
-                resolve(result)
-            }
-        })
-    }
-
-    f(10, 10)
-        .then(value => {
-            console.log(value);
-            return value + 100
-        })
-        .then(value => {
-            console.log(value);
-            return value + 5
-        })
-        .then(value => {
-            console.log(value);
-        })
-        .catch(reason => {
-            console.error(reason);
-        });
-
-
-    let promise = new Promise((resolve, reject) => {
+    let wakeUp = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve('Прокинувся')
         }, 1000);
-        setTimeout(() => {
-            resolve('Прокинувся')
-        }, 2000)
+
     });
 
-    promise
+    wakeUp
         .then(value => {
             console.log(value);
         });
-        promise
-            .then(value => {
-        console.log(value);
+
+    let haveDinner = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Поснідав')
+        }, 1500);
+
     });
 
+    haveDinner
+        .then(value => {
+            console.log(value);
+        });
 
+    let closeUp= new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Зібрався')
+        }, 3500);
+
+    });
+
+    closeUp
+        .then(value => {
+            console.log(value);
+        });
+
+    let goingToWork= new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Добрався до роботи')
+        }, 5500);
+
+    });
+
+    goingToWork
+        .then(value => {
+            console.log(value);
+        });
+
+    let workingBeforeBreakfast= new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Працював')
+        }, 10500);
+
+    });
+
+    workingBeforeBreakfast
+        .then(value => {
+            console.log(value);
+        });
+
+    let haveBreakfast= new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Пообідав')
+        }, 11500);
+
+    });
+
+    haveBreakfast
+        .then(value => {
+            console.log(value);
+        });
+
+    let workingAfterBreakfast= new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Працював')
+        }, 15500);
+
+    });
+
+    workingAfterBreakfast
+        .then(value => {
+            console.log(value);
+        });
+
+    let goingHome= new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Поїхав додому')
+        }, 16500);
+
+    });
+
+    goingHome
+        .then(value => {
+            console.log(value);
+        });
+
+    let getStudy= new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Повчився')
+        }, 19500);
+
+    });
+
+    getStudy
+        .then(value => {
+            console.log(value);
+        });
+
+    let havingSleeping= new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Поспав')
+        }, 22500);
+
+    });
+
+    havingSleeping
+        .then(value => {
+            console.log(value);
+        });
     // function printNumbers(from, to) {
     //     let current = from;
     //
