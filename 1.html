@@ -91,18 +91,15 @@
                                             console.log(value);
                                         })
                                         .then(() => {
-                                            let haveBreakfast = new Promise((resolve, reject) => {
-                                                headache = false;
-                                                if (headache === true) {
-                                                    reject('Болить голова!')
+                                            let haveBreakfast = new Promise((resolve, reject, forgotPurse) => {
+                                                forgotPurse = false;
+                                                if (forgotPurse === true) {
+                                                    reject('Забув гаманець!')
                                                 } else {
                                                     setTimeout(() => {
-                                                        resolve('Працював')
-                                                    }, 4000);
+                                                        resolve('Пообідав')
+                                                    }, 1000);
                                                 }
-                                                setTimeout(() => {
-                                                    resolve('Пообідав')
-                                                }, 1000);
 
                                             });
 
