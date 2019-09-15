@@ -122,23 +122,22 @@
     // для класса Array, добовляя их через prototype
 
 
-    Array.prototype.myMap = function(cb) {
+    Array.prototype.myMap = function(callback) {
         let result = [];
         for (let i = 0; i < this.length; i++) {
             let value = this[i];
             let index = i;
             let array = this;
-            result.push(cb(value, index, array));
+            result.push(callback(value));
         }
         return result;
     };
-
-    objArr.myMap();
+    
 
     console.log('');
 
     let arr2 = arr.myMap(function(value) {
-        return value + 1000;
+        return value * 1000;
     });
 
     console.log(arr2);
