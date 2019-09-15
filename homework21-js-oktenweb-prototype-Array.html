@@ -8,11 +8,33 @@
 <script>
 
     //     Взять библиотечный класс Array и добавить ему новый метод который
-    // - выводит наименьший числовой элемент массива
 
     let arr = [7, 33, 55, 4];
     let newArr = [888, 33, 55, 77777];
     let stringArr = ['AbraCadAbra', 'Ira', 'Volodymyr',  'Victor'];
+
+    // - при вызове выводит на консоль текущий массив
+
+    Array.prototype.outputArray = function () {
+        console.log(this);
+    };
+
+    arr.outputArray();
+    newArr.outputArray();
+    stringArr.outputArray();
+
+    // - при вызове выводит на консоль значение текущого массива
+
+    Array.prototype.outputArray = function () {
+        console.log(...this);
+    };
+
+    arr.outputArray();
+    newArr.outputArray();
+    stringArr.outputArray();
+
+
+    // - выводит наименьший числовой элемент массива
 
     Array.prototype.outputMin = function () {
         console.log(Math.min(...this))
@@ -32,6 +54,10 @@
     };
 
     stringArr.outputMinString();
+
+    // - выводит только парные елементы
+
+    // - выводит только элементы с парными индексами
 
 
     // - выводит только объекты у которых присутствует поле id
