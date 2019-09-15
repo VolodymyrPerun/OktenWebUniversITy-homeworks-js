@@ -112,7 +112,7 @@
 
     Array.prototype.outputObjectsWithId2 = function () {
         console.log(this.filter((arguments) => {
-           return  arguments.hasOwnProperty('id')
+            return arguments.hasOwnProperty('id')
         }));
     };
 
@@ -121,15 +121,17 @@
     // Создаем свои методы map, filter, foreach
     // для класса Array, добовляя их через prototype
 
+
     Array.prototype.myFilter = function () {
-Object.arguments = this.arguments;
-return this.arguments
+        Object.arguments = this.arguments;
+        return this.arguments
     };
 
     objArr.myFilter();
 
     console.log('');
 
+    
     Array.prototype.outputObjectsWithId = function () {
         console.log(this.myFilter((user) => {
             return (user.id !== this.id);
