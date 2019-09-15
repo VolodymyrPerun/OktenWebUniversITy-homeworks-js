@@ -97,16 +97,46 @@
 
     // - выводит только объекты у которых присутствует поле id
 
-    Array.prototype.outputObjectsWithId = function () {
+    ///////////////1.///////////////
+
+    Array.prototype.outputObjectsWithId1 = function () {
         console.log(this.filter((user) => {
             return (user.id !== this.id);
         }));
     };
 
-    objArr.outputObjectsWithId();
+    objArr.outputObjectsWithId1();
+
+
+    ///////////////2.///////////////
+
+    Array.prototype.outputObjectsWithId2 = function () {
+        console.log(this.filter((arguments) => {
+           return  arguments.hasOwnProperty('id')
+        }));
+    };
+
+    objArr.outputObjectsWithId2();
 
     // Создаем свои методы map, filter, foreach
     // для класса Array, добовляя их через prototype
+
+    Array.prototype.myFilter = function () {
+Object.arguments = this.arguments;
+return this.arguments
+    };
+
+    objArr.myFilter();
+
+    console.log('');
+
+    Array.prototype.outputObjectsWithId = function () {
+        console.log(this.myFilter((user) => {
+            return (user.id !== this.id);
+        }));
+    };
+
+    objArr.outputObjectsWithId();
 
 
 </script>
