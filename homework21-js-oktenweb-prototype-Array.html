@@ -9,8 +9,8 @@
 
     //     Взять библиотечный класс Array и добавить ему новый метод который
 
-    let arr = [7, 33, 55, 4];
-    let newArr = [888, 33, 55, 77777];
+    let arr = [7, 33,64, 55, 4];
+    let newArr = [888, 33, 55, 77777, 1024];
     let stringArr = ['AbraCadAbra', 'Ira', 'Volodymyr',  'Victor'];
 
     // - при вызове выводит на консоль текущий массив
@@ -56,6 +56,15 @@
     stringArr.outputMinString();
 
     // - выводит только парные елементы
+
+    Array.prototype.outputMin = function () {
+        console.log(this.filter(function (value) {
+            return (value % 2 === 0);
+        }));
+    };
+
+    arr.outputMin();
+    newArr.outputMin();
 
     // - выводит только элементы с парными индексами
 
