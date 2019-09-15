@@ -122,23 +122,34 @@
     // для класса Array, добовляя их через prototype
 
 
-    Array.prototype.myFilter = function () {
-        Object.arguments = this.arguments;
-        return this.arguments
+    Array.prototype.myMap = function(cb) {
+        let result = [];
+        for (let i = 0; i < this.length; i++) {
+            let value = this[i];
+            let index = i;
+            let array = this;
+            result.push(cb(value, index, array));
+        }
+        return result;
     };
 
-    objArr.myFilter();
+    objArr.myMap();
 
     console.log('');
 
-    
-    Array.prototype.outputObjectsWithId = function () {
-        console.log(this.myFilter((user) => {
-            return (user.id !== this.id);
-        }));
-    };
+    let arr2 = arr.myMap(function(value) {
+        return value + 1000;
+    });
 
-    objArr.outputObjectsWithId();
+    console.log(arr2);
+
+    // Array.prototype.outputObjectsWithId = function () {
+    //     console.log(this.myFilter((user) => {
+    //         return (user.id !== this.id);
+    //     }));
+    // };
+    //
+    // objArr.outputObjectsWithId();
 
 
 </script>
