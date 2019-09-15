@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //     Взять библиотечный класс Array и добавить ему новый метод который
+    // - выводит наименьший числовой элемент массива
+
+    let arr = [7, 33, 55, 4];
+    let newArr = [888, 33, 55, 77777];
+    let stringArr = ['AbraCadAbra', 'Ira', 'Volodymyr',  'Victor'];
+
+    Array.prototype.outputMin = function () {
+        console.log(Math.min(...this))
+    };
+
+    arr.outputMin();
+    newArr.outputMin();
+
+    // - выводит наименьший по размеру строчный элемент массива
+
+    Array.prototype.outputMinString = function () {
+        this.sort((a, b) => {
+            return (a.length - b.length)
+        });
+
+        console.log(this.shift())
+    };
+
+    stringArr.outputMinString();
+
+
+    // - выводит только объекты у которых присутствует поле id
+    //
+    //
+    // Создаем свои методы map, filter, foreach
+    // для класса Array, добовляя их через prototype
+
+
+</script>
+</body>
+</html>
