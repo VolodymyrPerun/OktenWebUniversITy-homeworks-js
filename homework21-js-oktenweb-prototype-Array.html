@@ -9,9 +9,26 @@
 
     //     Взять библиотечный класс Array и добавить ему новый метод который
 
-    let arr = [7, 33,64, 55, 4];
+    let arr = [7, 33, 64, 55, 4];
     let newArr = [888, 33, 55, 77777, 1024];
-    let stringArr = ['AbraCadAbra', 'Ira', 'Volodymyr',  'Victor'];
+    let stringArr = ['AbraCadAbra', 'Ira', 'Volodymyr', 'Victor'];
+    let objArr = [
+        {
+            name: 'Volodymyr'
+        },
+        {
+            name: 'Ira', id: 101
+        },
+        {
+            name: 'Victor'
+        },
+        {
+            name: 'Andriy', id: 102
+        },
+        {
+            name: 'Vasia'
+        },
+    ];
 
     // - при вызове выводит на консоль текущий массив
 
@@ -25,13 +42,13 @@
 
     // - при вызове выводит на консоль значение текущого массива
 
-    Array.prototype.outputArray = function () {
+    Array.prototype.outputArrayValues = function () {
         console.log(...this);
     };
 
-    arr.outputArray();
-    newArr.outputArray();
-    stringArr.outputArray();
+    arr.outputArrayValues();
+    newArr.outputArrayValues();
+    stringArr.outputArrayValues();
 
 
     // - выводит наименьший числовой элемент массива
@@ -79,8 +96,15 @@
     newArr.outputMin();
 
     // - выводит только объекты у которых присутствует поле id
-    //
-    //
+
+    Array.prototype.outputObjectsWithId = function () {
+        console.log(this.filter((user) => {
+            return (user.id !== this.id);
+        }));
+    };
+
+    objArr.outputObjectsWithId();
+
     // Создаем свои методы map, filter, foreach
     // для класса Array, добовляя их через prototype
 
