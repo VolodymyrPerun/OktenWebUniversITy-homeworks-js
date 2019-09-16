@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+<style>
+
+    #text {
+        color: darkred;
+        background-color: lightgreen;
+    }
+
+    #btn-hider {
+        display: block;
+        color: darkred;
+        background-color: lightgreen;
+        margin-bottom: 40px;
+    }
+
+    .hide {
+        display: none;
+    }
+</style>
+
+
+<p id="text"> 1 Используя JavaScript, сделайте так,
+    чтобы при клике на кнопку исчезал элемент с id="text".</p>
+
+<button id="btn-hider">Text display: none</button>
+
+<button class="btn-none" onclick="this.classList.toggle('hide')">
+    Button display: none №1</button>
+
+<button id="btn-none2">
+    Button display: none №2</button>
+
+</body>
+
+<script>
+
+
+    // 1 Используя JavaScript, сделайте так,
+    // чтобы при клике на кнопку исчезал элемент с id="text".
+
+    document.getElementById('btn-hider').onclick = function () {
+        document.getElementById('text').hidden = true;
+    };
+
+    // 2 Создайте кнопку, при клике на которую, она будет скрывать сама себя.
+
+    document.getElementById('btn-none2').onclick = function () {
+        document.getElementById('btn-none2').hidden = true;
+    };
+
+    // 3 створити інпут який приймає вік людини та кнопку яка підтверджує дію.
+    //     При натисканні на кнопку зчитати інформацію
+    //     з інпуту та перевірити вік чи меньше він ніж 18,
+    //     та повідомити про це користувача
+    //
+    //
+    // 4 Створити інпут з бігунком та блок 200*200,
+    // при переміщені бігунка блок збільшує свою ширину пропорційно.
+    //     Задати бігунку мінімальні значення в 200 максимальне в 600
+    //
+    // 5 Создайте меню, которое раскрывается/сворачивается при клике
+
+
+</script>
+</html>
