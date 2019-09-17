@@ -68,11 +68,61 @@
         transform: scale(1.1);
         opacity: 0.8;
     }
+
+    .mainblock{
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        width: 600px;
+        height: 200px;
+        border: 2px solid black;
+        overflow: hidden;
+    }
+    .hiddenblock{
+        display: flex;
+        position: relative;
+        left: -300px;
+    }
+    .hiddenblock div {
+        width: 200px;
+        height: 200px;
+    }
+    .img1{
+        background: red;
+    }
+    .img2{
+        background: green;
+    }
+    .img3{
+        background: yellow;
+    }
+    .img4{
+        background: blue;
+    }
+    .img5{
+        background: pink;
+    }
+    .img6{
+        background: purple;
+    }
+    .btns{
+        display: flex;
+        justify-content: space-between;
+    }
+    .btns button{
+        display: block;
+    }
+
+
 </style>
+
+<!--1 Используя JavaScript, сделайте так, чтобы при клике на кнопку исчезал элемент с id="text".-->
 
 
 <p id="text"> 1 Используя JavaScript, сделайте так,
     чтобы при клике на кнопку исчезал элемент с id="text".</p>
+
+<!--2 Создайте кнопку, при клике на которую, она будет скрывать сама себя.-->
 
 <button id="btn-hider">Text display: none</button>
 
@@ -80,9 +130,14 @@
     Button display: none №1
 </button>
 
+
 <button id="btn-none2">
     Button display: none №2
 </button>
+
+<!--4 Створити інпут з бігунком та блок 200*200,
+ при переміщені бігунка блок збільшує свою ширину пропорційно.
+ Задати бігунку мінімальні значення в 200 максимальне в 600-->
 
 <div id="someBlock"></div>
 
@@ -91,7 +146,10 @@
        oninput="sizeBlock()" value="3">
 
 
-<form autocomplete="on" autocapitalize="on" method="post">
+<!--3 створити інпут який приймає вік людини та кнопку яка підтверджує дію.
+При натисканні на кнопку зчитати інформацію з інпуту та перевірити
+ вік чи меньше він ніж 18, та повідомити про це користувача-->
+
     <label for="age"> Enter you age:
         <input type="number" name="age"
                oninput="validation()" placeholder=" Your age... " id="age" required>
@@ -99,6 +157,7 @@
     <input type="submit">
 </form>
 
+<!--5 Создайте меню, которое раскрывается/сворачивается при клике:-->
 
 <button id="btn-toggle">MENU</button>
 
@@ -107,6 +166,38 @@
     <li>About US</li>
     <li>Blog</li>
 </ul>
+
+<!--6 Есть список сообщений. Добавьте каждому сообщению по кнопке для его скрытия.-->
+
+
+
+<ul >
+    <li id="message1">Hello <button id="hiddenb1">x</button></li>
+    <li id="message2">I have <button id="hiddenb2">x</button></li>
+    <li id="message3">nice photo <button id="hiddenb3">x</button></li>
+</ul>
+
+
+<!--7 Напишите «Карусель» – ленту изображений,
+ которую можно листать влево-вправо нажатием на стрелочки.-->
+
+
+<div class="mainblock">
+    <div class="hiddenblock">
+        <div class = "img1"></div>
+        <div class = "img2"></div>
+        <div class = "img3"></div>
+        <div class = "img4"></div>
+        <div class = "img5"></div>
+        <div class = "img6"></div>
+    </div>
+</div>
+
+<div class="btns">
+    <button id="btnLeft"><<<<<</button>
+    <button id="btnRight">>>>>>></button>
+
+</div>
 
 <script>
 
@@ -156,6 +247,44 @@
     btn5.onclick = () => {
         menu.classList.toggle("hide")
     }
+
+    //6 Есть список сообщений. Добавьте каждому сообщению по кнопке для его скрытия.
+
+
+    let hiddenbutton1 = document.getElementById("hiddenb1");
+    let hiddenbutton2 = document.getElementById("hiddenb2");
+    let hiddenbutton3 = document.getElementById("hiddenb3");
+    let massage1 = document.getElementById("message1");
+    let massage2 = document.getElementById("message2");
+    let massage3 = document.getElementById("message3");
+
+    hiddenbutton1.onclick = () => {
+        massage1.hidden = true;
+    };
+    hiddenbutton2.onclick = () => {
+        massage2.hidden = true;
+    };
+    hiddenbutton3.onclick = () => {
+        massage3.hidden = true;
+    }
+
+
+    // 7. Напишите «Карусель» – ленту изображений,
+    //которую можно листать влево-вправо нажатием на стрелочки.
+
+
+    let [svipeblock] = document.getElementsByClassName("hiddenblock")
+    let btnleft = document.getElementById("btnLeft")
+    let btnright = document.getElementById("btnRight")
+    btnleft.onclick = () => {
+        svipeblock.style.left = `-20px`
+    };
+    btnright.onclick = () => {
+        let x = 10;
+        svipeblock.style.left = `${++x}px`
+    }
+
+
 </script>
 </body>
 
