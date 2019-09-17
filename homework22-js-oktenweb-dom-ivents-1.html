@@ -85,8 +85,7 @@
     //     та повідомити про це користувача
 
 function validation() {
-    let ageVal = age.value;
-    if (ageVal < 18) {
+    if (age.value < 18) {
         alert('Your age is not enough!!!');
         document.getElementById('age').hidden = true;
     }
