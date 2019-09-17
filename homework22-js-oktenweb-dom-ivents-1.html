@@ -23,7 +23,7 @@
         display: none;
     }
 
-    #someBlock{
+    #someBlock {
         margin-top: 30px;
         background-color: red;
         height: 200px;
@@ -32,6 +32,41 @@
 
     #age {
         margin-top: 30px;
+    }
+
+    #btn-toggle {
+        margin-top: 30px;
+        color: white;
+        background-color: darkred;
+        width: 15%;
+        height: auto;
+        font-family: "Trebuchet MS";
+        font-size: 15px;
+    }
+
+    #btn-toggle:active {
+        opacity: 0.8;
+    }
+
+    #menu {
+        margin-top: 3px;
+    }
+
+    #menu li {
+        display: block;
+        list-style: none;
+        border: 1px solid white;
+        width: 15%;
+        background-color: indianred;
+        color: antiquewhite;
+        text-align: center;
+        font-family: "Trebuchet MS";
+        font-size: 15px;
+    }
+
+    #menu li:hover {
+        transform: scale(1.1);
+        opacity: 0.8;
     }
 </style>
 
@@ -42,26 +77,36 @@
 <button id="btn-hider">Text display: none</button>
 
 <button class="btn-none" onclick="this.classList.toggle('hide')">
-    Button display: none №1</button>
+    Button display: none №1
+</button>
 
 <button id="btn-none2">
-    Button display: none №2</button>
+    Button display: none №2
+</button>
 
 <div id="someBlock"></div>
 
 <label for="size">pull: </label>
 <input type="range" name="range" min="200" max="600" id="size"
-                                 oninput="sizeBlock()" value="3">
+       oninput="sizeBlock()" value="3">
 
 
 <form autocomplete="on" autocapitalize="on" method="post">
     <label for="age"> Enter you age:
         <input type="number" name="age"
-        oninput="validation()"   placeholder=" Your age... " id="age" required >
+               oninput="validation()" placeholder=" Your age... " id="age" required>
     </label>
-    <input type="submit" >
+    <input type="submit">
 </form>
 
+
+<button id="btn-toggle">MENU</button>
+
+<ul id="menu" class="hide">
+    <li>Home</li>
+    <li>About US</li>
+    <li>Blog</li>
+</ul>
 
 <script>
 
@@ -84,15 +129,14 @@
     //     з інпуту та перевірити вік чи меньше він ніж 18,
     //     та повідомити про це користувача
 
-function validation() {
-    if (age.value < 18) {
-        alert('Your age is not enough!!!');
-        document.getElementById('age').hidden = true;
+    function validation() {
+        if (age.value < 18) {
+            alert('Your age is not enough!!!');
+            document.getElementById('age').hidden = true;
+        } else {
+            alert('You pass!!!')
+        }
     }
-    else {
-        alert('You pass!!!')
-    }
-}
 
     // 4 Створити інпут з бігунком та блок 200*200,
     // при переміщені бігунка блок збільшує свою ширину пропорційно.
@@ -101,13 +145,17 @@ function validation() {
     function sizeBlock() {
         let size = document.getElementById("size");
         let block = document.getElementById("someBlock");
-        block.style.width = size.value +'px';
+        block.style.width = size.value + 'px';
     }
 
 
     // 5 Создайте меню, которое раскрывается/сворачивается при клике
 
-
+    let btn5 = document.getElementById("btn-toggle");
+    let menu = document.getElementById("menu");
+    btn5.onclick = () => {
+        menu.classList.toggle("hide")
+    }
 </script>
 </body>
 
