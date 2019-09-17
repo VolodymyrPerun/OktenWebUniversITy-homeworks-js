@@ -54,7 +54,7 @@
                                  oninput="sizeBlock()" value="3">
 
 
-<form autocomplete="on" autocapitalize="on">
+<form autocomplete="on" autocapitalize="on" method="post">
     <label for="age"> Enter you age:
         <input type="number" name="age"
         oninput="validation()"   placeholder=" Your age... " id="age" required >
@@ -86,7 +86,13 @@
 
 function validation() {
     let ageVal = age.value;
-    console.log(ageVal);
+    if (ageVal < 18) {
+        alert('Your age is not enough!!!');
+        document.getElementById('age').hidden = true;
+    }
+    else {
+        alert('You pass!!!')
+    }
 }
 
     // 4 Створити інпут з бігунком та блок 200*200,
