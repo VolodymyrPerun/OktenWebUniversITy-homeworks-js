@@ -121,9 +121,9 @@
     // Создаем свои методы map, filter, foreach
     // для класса Array, добовляя их через prototype
 
-//////////////////my map///////////////
+    //////////////////my map///////////////
 
-    Array.prototype.myMap = function(callback) {
+    Array.prototype.myMap = function (callback) {
         let result = [];
         for (let i = 0; i < this.length; i++) {
             let value = this[i];
@@ -137,12 +137,28 @@
 
     console.log('');
 
-    let arr2 = arr.myMap(function(value) {
+    let arr2 = arr.myMap(function (value) {
         return value * 1000;
     });
 
     console.log(arr2);
 
+    //////////////My Foreach/////////
+
+    Array.prototype.myForeach = function (cb) {
+
+        let i;
+        let length = this.length;
+        for (i = 0; i < length; i++) {
+            cb(this[i])
+        }
+    };
+
+     objArr.myForeach(function (user) {
+        return user.id += 200;
+    });
+
+    console.log(objArr);
 
 
 
