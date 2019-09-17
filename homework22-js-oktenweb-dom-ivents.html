@@ -22,6 +22,13 @@
     .hide {
         display: none;
     }
+
+    #someBlock{
+        margin-top: 30px;
+        background-color: red;
+        height: 200px;
+        width: 200px;
+    }
 </style>
 
 
@@ -36,7 +43,16 @@
 <button id="btn-none2">
     Button display: none №2</button>
 
-</body>
+<div id="someBlock"></div>
+
+<label for="size">pull: </label>
+<input type="range" name="range" min="200" max="600" id="size"
+                                 oninput="sizeBlock()" value="3">
+
+
+
+
+
 
 <script>
 
@@ -63,9 +79,18 @@
     // при переміщені бігунка блок збільшує свою ширину пропорційно.
     //     Задати бігунку мінімальні значення в 200 максимальне в 600
 
+    function sizeBlock() {
+        let size = document.getElementById("size");
+        let block = document.getElementById("someBlock");
+        block.style.width = size.value +'px';
+    }
+
 
     // 5 Создайте меню, которое раскрывается/сворачивается при клике
 
 
 </script>
+</body>
+
+
 </html>
