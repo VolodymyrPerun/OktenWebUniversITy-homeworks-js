@@ -17,6 +17,8 @@
 <!--    Все те саме, але тепер потрібно перевіряти-->
 <!--    чи не містить ціле речення в собі погані слова-->
 
+<input type="text" class="badWordsInText">
+
 <script>
 
     // - створити блок з id, class та текстом в середені.
@@ -60,6 +62,22 @@
     // - Робимо попередню логіку цікавішею.
     //     Все те саме, але тепер потрібно перевіряти
     //     чи не містить ціле речення в собі погані слова
+
+
+    let badWordsTextInput = document.querySelector(".badWordsInText");
+
+    badWordsTextInput.onchange = function badWordsInTextFunc() {
+        let badWordsTextExecute = badWordsTextInput.value.split(" ");
+        for (let j = 0; j < badWordsTextExecute.length; j++) {
+            for (let i = 0; i < badWordsArr.length; i++) {
+                if (badWordsTextExecute[j] === badWordsArr[i]) {
+                    alert('Bad word!!!')
+
+                }
+            }
+        }
+
+    };
 
 </script>
 </body>
