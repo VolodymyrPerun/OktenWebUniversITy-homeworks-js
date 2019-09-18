@@ -6,6 +6,8 @@
 </head>
 <body>
 
+<div class="tab"></div>
+
 <!-- - Сворити масив не цензцрних слів.-->
 <!--     Сворити інпут текстового типу.-->
 <!--    Якщо людина вводить слово і воно міститься в масиві не цензурних слів-->
@@ -39,7 +41,30 @@
     //     а другий параметр визначає кліькіть ячеєк в кожній строці.
     //     третій параметр визначає елемент в який потрібно таблицю додати
     //
-    //
+
+
+    let tbl = document.querySelector(".tab");
+    function tableCreate(parent, cols, rows, value) {
+        let table = document.createElement("table");
+        table.style.width = '100px';
+        table.style.height = '100px';
+        table.style.border = '1px solid black';
+        for (let i = 0; i < rows; i++) {
+            let tr = document.createElement("tr");
+            tr.style.border = '1px solid black';
+            for (let j = 0; j < cols; j++) {
+                let td = document.createElement("td");
+                td.style.border = '1px solid black';
+                tr.appendChild(td);
+                td.innerText = `${value}`
+            }
+            table.appendChild(tr);
+        }
+        parent.appendChild(table);
+    }
+    tableCreate(tbl, 5, 5, "Hello World");
+
+
     // - Сворити масив не цензцрних слів.
     //     Сворити інпут текстового типу.
     //     Якщо людина вводить слово і воно міститься в масиві не цензурних слів
