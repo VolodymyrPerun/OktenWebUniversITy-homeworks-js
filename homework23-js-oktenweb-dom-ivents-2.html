@@ -50,7 +50,8 @@
 
     badWordsInput.onchange = function badWordsFunc() {
     for (let i = 0; i < badWordsArr.length; i++) {
-        if (badWordsArr[i] === badWordsInput.value) {
+        if ((badWordsArr[i]).toLocaleUpperCase()
+            === (badWordsInput.value).toUpperCase()) {
             alert('Bad word!!!')
 
         }
@@ -70,7 +71,8 @@
         let badWordsTextExecute = badWordsTextInput.value.split(" ");
         for (let j = 0; j < badWordsTextExecute.length; j++) {
             for (let i = 0; i < badWordsArr.length; i++) {
-                if (badWordsTextExecute[j] === badWordsArr[i]) {
+                if ((badWordsTextExecute[j]).toLocaleUpperCase()
+                    === (badWordsArr[i]).toLocaleUpperCase()) {
                     alert('Bad word!!!')
 
                 }
