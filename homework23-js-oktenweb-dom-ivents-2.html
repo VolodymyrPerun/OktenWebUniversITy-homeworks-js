@@ -19,6 +19,21 @@
     Text to change
 </div>
 
+<!-- - створити дві форми , по два інпути в кожній-->
+<!--ствоирити кнопку при кліку на яку считується-->
+<!--та виводиться на консоль інформація з цих форм-->
+
+<form>
+    <input type="text" name="input1_1">
+    <input type="text" name="input1_2">
+</form>
+
+<form>
+    <input type="text" name="input2_1">
+    <input type="text" name="input2_2">
+</form>
+
+<button id="outputFromForms">click me</button>
 
 
 <!-- - Створити функцію, яка генерує таблицю,-->
@@ -66,13 +81,13 @@
     // - створити функцію яка змінюватиме розміри та
     // колір цього блоку згідно з визначиними аргументами
 
-      let textToChangeFromId  = document.getElementById("container");
+    let textToChangeFromId = document.getElementById("container");
     let [textToChangeFromClass] = document.getElementsByClassName("container");
     let [textToChangeFromTag] = document.getElementsByTagName("div");
 
     /*- змінити цей текст використовуючи селектори id, class,  tag*/
 
-    textToChangeFromId .innerText = "Hello ID";
+    textToChangeFromId.innerText = "Hello ID";
     textToChangeFromClass.innerText = "Hello Class";
     textToChangeFromTag.innerText = "Hello Tag";
 
@@ -95,8 +110,15 @@
     // ствоирити кнопку при кліку на яку считується
     // та виводиться на консоль інформація з цих форм
 
-    
+    let outputFromForms = document.getElementById('outputFromForms'),
+        inputsOutput = document.getElementsByTagName('input');
 
+
+    outputFromForms.onclick = function () {
+        for (let i = 0; i < inputsOutput.length; i++) {
+            console.log(inputsOutput[i].value);
+        }
+    };
 
     // - Створити функцію, яка генерує таблицю,
     // перший аргумент визначає кількість строк,
@@ -106,6 +128,7 @@
 
 
     let tbl = document.querySelector(".tab");
+
     function tableCreate(parent, cols, rows, value) {
         let table = document.createElement("table");
         table.style.width = '100px';
@@ -124,6 +147,7 @@
         }
         parent.appendChild(table);
     }
+
     tableCreate(tbl, 5, 5, "Hello World");
 
 
@@ -136,14 +160,14 @@
     let badWordsInput = document.querySelector(".badWords");
 
     badWordsInput.onchange = function badWordsFunc() {
-    for (let i = 0; i < badWordsArr.length; i++) {
-        if ((badWordsArr[i]).toLocaleUpperCase()
-            === (badWordsInput.value).toUpperCase()) {
-            alert('Bad word!!!')
+        for (let i = 0; i < badWordsArr.length; i++) {
+            if ((badWordsArr[i]).toLocaleUpperCase()
+                === (badWordsInput.value).toUpperCase()) {
+                alert('Bad word!!!')
 
+            }
         }
-    }
-};
+    };
 
 
     //
@@ -169,12 +193,10 @@
     };
 
 
-
-//Створити 3 инпута: 1-й визничає к-сть рядків таблиці,
+    //Створити 3 инпута: 1-й визничає к-сть рядків таблиці,
     //2-й к-сть рядків таблиці, 3-й приймає текст, що буде внесено в таблицю.
     //Створити кнопку, при натисканні на яку буде генеруватись таблиця,
     //використовуючи дані з вищеописаних інпутів
-
 
 
     let rows = document.forms.tableForm.rows;
@@ -187,7 +209,7 @@
         let tbl = document.createElement('table');
         document.body.appendChild(tbl);
         tbl.style.borderCollapse = 'collapse';
-        tbl.style.border = '1px solid black'
+        tbl.style.border = '1px solid black';
 
         for (let i = 0; i < rows.value; i++) {
             let rowsElement = document.createElement('tr');
@@ -200,15 +222,15 @@
                 colElement.style.width = '100px';
                 colElement.style.height = '40px';
                 colElement.style.border = '2px solid black';
-                colElement.innerText=text.value;
-                colElement.ondblclick=function () {
+                colElement.innerText = text.value;
+                colElement.ondblclick = function () {
                     let input = document.createElement('input');
-                    rowsElement.replaceChild(input,colElement);
-                    input.value=colElement.innerText;
+                    rowsElement.replaceChild(input, colElement);
+                    input.value = colElement.innerText;
                     input.focus();
-                    input.onblur=function () {
-                        rowsElement.replaceChild(colElement,input);
-                        colElement.innerText=input.value
+                    input.onblur = function () {
+                        rowsElement.replaceChild(colElement, input);
+                        colElement.innerText = input.value
                     }
 
                 }
