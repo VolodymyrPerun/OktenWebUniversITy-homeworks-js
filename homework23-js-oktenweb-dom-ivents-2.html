@@ -27,6 +27,21 @@
 
 <input type="text" class="badWordsInText">
 
+
+<!--Створити 3 инпута: 1-й визничає к-сть рядків таблиці,-->
+<!--2-й к-сть рядків таблиці, 3-й приймає текст, що буде внесено в таблицю.-->
+<!--Створити кнопку, при натисканні на яку буде генеруватись таблиця,-->
+<!--використовуючи дані з вищеописаних інпутів-->
+
+
+<form action="" name="tableForm" class="tableForm">
+
+    <input type="text" name="rows" placeholder="rows">
+    <input type="text" name="cols" placeholder="cols">
+    <input type="text" name="text" placeholder="text">
+</form>
+<button id="createTableBtn">create table</button>
+
 <script>
 
     // - створити блок з id, class та текстом в середені.
@@ -111,6 +126,57 @@
         }
 
     };
+
+
+
+//Створити 3 инпута: 1-й визничає к-сть рядків таблиці,
+    //2-й к-сть рядків таблиці, 3-й приймає текст, що буде внесено в таблицю.
+    //Створити кнопку, при натисканні на яку буде генеруватись таблиця,
+    //використовуючи дані з вищеописаних інпутів
+
+
+
+    let rows = document.forms.tableForm.rows;
+    let cols = document.forms.tableForm.cols;
+    let text = document.forms.tableForm.text;
+    let createTableBtn = document.getElementById('createTableBtn');
+
+
+    createTableBtn.onclick = function () {
+        let tbl = document.createElement('table');
+        document.body.appendChild(tbl);
+        tbl.style.borderCollapse = 'collapse';
+        tbl.style.border = '1px solid black'
+
+        for (let i = 0; i < rows.value; i++) {
+            let rowsElement = document.createElement('tr');
+            tbl.appendChild(rowsElement);
+
+
+            for (let j = 0; j < cols.value; j++) {
+                let colElement = document.createElement('td');
+                rowsElement.appendChild(colElement);
+                colElement.style.width = '100px';
+                colElement.style.height = '40px';
+                colElement.style.border = '2px solid black';
+                colElement.innerText=text.value;
+                colElement.ondblclick=function () {
+                    let input = document.createElement('input');
+                    rowsElement.replaceChild(input,colElement);
+                    input.value=colElement.innerText;
+                    input.focus();
+                    input.onblur=function () {
+                        rowsElement.replaceChild(colElement,input);
+                        colElement.innerText=input.value
+                    }
+
+                }
+
+            }
+        }
+
+
+    }
 
 </script>
 </body>
