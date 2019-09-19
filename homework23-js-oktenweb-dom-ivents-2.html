@@ -6,6 +6,21 @@
 </head>
 <body>
 
+
+<!-- - створити блок з id, class та текстом в середені.-->
+<!-- Зчитати окремо цей текст за селекторів по-->
+<!-- id , class та тегу-->
+<!-- - змінити цей текст використовуючи селектори id, class,  tag-->
+<!-- - створити функцію яка змінюватиме розміри та-->
+<!-- колір цього блоку згідно з визначиними аргументами-->
+
+
+<div class="container" id="container">
+    Text to change
+</div>
+
+
+
 <!-- - Створити функцію, яка генерує таблицю,-->
 <!-- перший аргумент визначає кількість строк,-->
 <!--     а другий параметр визначає кліькіть ячеєк в кожній строці.-->
@@ -51,12 +66,38 @@
     // - створити функцію яка змінюватиме розміри та
     // колір цього блоку згідно з визначиними аргументами
 
+      let textToChangeFromId  = document.getElementById("container");
+    let [textToChangeFromClass] = document.getElementsByClassName("container");
+    let [textToChangeFromTag] = document.getElementsByTagName("div");
+
+    /*- змінити цей текст використовуючи селектори id, class,  tag*/
+
+    textToChangeFromId .innerText = "Hello ID";
+    textToChangeFromClass.innerText = "Hello Class";
+    textToChangeFromTag.innerText = "Hello Tag";
+
+    /*- створити функцію яка змінюватиме розміри та колір цього блоку згідно з визначиними аргументами-->*/
+
+    function sizeColorChange(width, height, r, g, b) {
+        if (r > 255 || g > 255 || b > 255) {
+            alert("Color Value can't be more than 255")
+        }
+        textToChangeFromId.style.width = `${width}px`;
+        textToChangeFromId.style.height = `${height}px`
+        textToChangeFromId.style.background = `rgb(${r},${g},${b})`
+    }
+
+    sizeColorChange(prompt('width'), prompt('height'), prompt('r')
+        , prompt('g'), prompt('b'));
+
 
     // - створити дві форми , по два інпути в кожній
     // ствоирити кнопку при кліку на яку считується
     // та виводиться на консоль інформація з цих форм
-    //
-    //
+
+    
+
+
     // - Створити функцію, яка генерує таблицю,
     // перший аргумент визначає кількість строк,
     //     а другий параметр визначає кліькіть ячеєк в кожній строці.
