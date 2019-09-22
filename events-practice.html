@@ -116,7 +116,14 @@
     function getElement(element) {
         return document.querySelector(element);
     }
-
+    let [text] = document.getElementsByClassName("text");
+    getElement('.smiley').ondblclick = function () {
+        this.style.display = 'none';
+        text.innerText = 'Mолодець!!!';
+        text.style.color = 'red';
+        text.style.background = 'white';
+        clearTimeout(stopTimer);
+    };
 
     //Объявим переменную
     var stopTimer;
@@ -151,6 +158,8 @@
             }
 
         };
+
+
 
         //для повторного запуска очистим rezult
         document.getElementById("rezult").innerHTML = '';
@@ -203,14 +212,7 @@
 
     }
 
-    let [text] = document.getElementsByClassName("text");
-    getElement('.smiley').ondblclick = function () {
-        this.style.display = 'none';
-        text.innerText = 'Mолодець!!!';
-        text.style.color = 'red';
-        text.style.background = 'white';
-        clearTimeout(stopTimer);
-    };
+
 
 
 </script>
