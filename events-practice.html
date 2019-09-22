@@ -101,7 +101,7 @@
     .buttons {
         position: absolute;
         left: 740px;
-        bottom: 400px;
+        bottom: 350px;
         color: antiquewhite;
         background: black;
         padding: 5px;
@@ -122,15 +122,15 @@
 
     .login {
         position: absolute;
-        left: 890px;
+        left: 850px;
         bottom: 500px;
-        color: antiquewhite;
-        background: black;
+        color: red;
+        background: white;
         padding: 5px;
         border-radius: 5px;
         text-align: center;
     }
-    
+
 </style>
 
 <div id="container">
@@ -158,7 +158,7 @@
        let bot = document.getElementById("bot");
         age = +prompt('Введіть свій вік');
         if (age >= 7) {
-         document.querySelector('.login').innerHTML =
+         document.querySelector('.login').innerHTML ='ІГРОК: ' +
              prompt('Введіть своє ім\'я' + ', ласкаво просимо').toLocaleUpperCase();
 
         } else {
