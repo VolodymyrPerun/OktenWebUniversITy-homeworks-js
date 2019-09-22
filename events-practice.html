@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events practice</title>
+</head>
+<body>
+<style>
+    .ball {
+        width: 100px;
+        height: 100px;
+        background: green;
+        border: 2px solid black;
+        border-radius: 100%;
+        position: absolute;
+        left: 200px;
+        top: 200px;
+        /*transform: translate(-23vw);*/
+    }
+</style>
+<div class="ball"></div>
+
+<script>
+
+    function getElement(element) {
+        return document.querySelector(element);
+    }
+
+    let toggle = false;
+    getElement('.ball').onmouseover = function () {
+        if (toggle) {
+            this.style.background = 'red';
+            this.style.height = '200px';
+            this.style.width = '200px';
+            this.style.transition = 'all .9s';
+            this.style.top = Math.floor(Math.random() *
+                ((70- 1 + 1)) + 1)+'vh';
+
+            this.style.left = Math.floor(Math.random() *
+                ((70 - 1 + 1)) + 1)+'vw';
+            toggle = false;
+        }
+        else {
+            this.style.background = 'yellow';
+            this.style.height = '50px';
+            this.style.width = '50px';
+            this.style.transition = 'all .9s';
+            this.style.top = Math.floor(Math.random() *
+                ((70- 1 + 1)) + 1)+'vh';
+
+            this.style.left = Math.floor(Math.random() *
+                ((70 - 1 + 1)) + 1)+'vw';
+            toggle = true;
+        }
+
+    };
+
+    // getElement('.ball').onmouseout = function () {
+    //     this.style.background = 'blue';
+    // };
+
+</script>
+</body>
+</html>
