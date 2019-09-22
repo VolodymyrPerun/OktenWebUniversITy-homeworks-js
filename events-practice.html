@@ -144,17 +144,11 @@
     stopBtn.innerText = 'Завершити гру / Почати нову гру';
     function login(name, age) {
        let bot = document.getElementById("bot");
-       let login1 = document.querySelector(".login");
         age = +prompt('Введіть свій вік');
         if (age >= 7) {
-          prompt(name).toUpperCase();
-            login1.removeChild(login1.childNodes[0]);
-         let txt2 = document.createTextNode(name);
-            login1.appendChild(txt2);
+         document.querySelector('.login').innerHTML =
+             prompt('Введіть своє ім\'я' + ', ласкаво просимо').toLocaleUpperCase();
 
-// stopBtn.removeChild(stopBtn.childNodes[0]);
-            // var text2 = document.createTextNode("Начать заново");
-            // stopBtn.appendChild(text2);
         } else {
             alert('Ви не досягли відповідного віку');
             bot.style.display = 'none';
