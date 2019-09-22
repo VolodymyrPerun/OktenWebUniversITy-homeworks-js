@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Events practice "Catch the smile"</title>
+    <title>Events practice "Catch the smile game"</title>
 </head>
 <body>
 <style>
@@ -93,7 +93,31 @@
         color: antiquewhite;
         background: black;
         padding: 5px;
+        font-size: 30px;
         border-radius: 5px;
+        text-align: center;
+    }
+
+    .buttons {
+        position: absolute;
+        left: 740px;
+        bottom: 400px;
+        color: antiquewhite;
+        background: black;
+        padding: 5px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    button {
+        background: yellow;
+        height: 40px;
+        border-radius: 15px;
+        text-transform: uppercase;
+        color: crimson;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 5px;
     }
 </style>
 
@@ -105,21 +129,56 @@
         <div class="smile"></div>
     </div>
 </div>
-<p id="time"></p>
-<button class="bot" id="bot" onclick="testTimer(180)" >Начать</button>
-<button onclick="stop ()">Остановить</button>
-<p id="rezult">
-</p>
+<h2 class="login"></h2>
+<div class="buttons">
+    <p id="time"></p>
+    <button class="bot" id="bot" onclick="testTimer(90)">Почати гру</button>
+    <button class="stop" onclick="stop()"></button>
+    <p id="rezult"></p>
+</div>
+
 <h1 class="text">Спіймай смайлик!</h1>
 <script>
+    var buttons = document.querySelector('.buttons');
+    var stopBtn = document.querySelector('.stop');
+    stopBtn.innerText = 'Завершити гру / Почати нову гру';
+    function login(name, age) {
+       let bot = document.getElementById("bot");
+       let login1 = document.querySelector(".login");
+        age = +prompt('Введіть свій вік');
+        if (age >= 7) {
+          prompt(name).toUpperCase();
+            login1.removeChild(login1.childNodes[0]);
+         let txt2 = document.createTextNode(name);
+            login1.appendChild(txt2);
+
+// stopBtn.removeChild(stopBtn.childNodes[0]);
+            // var text2 = document.createTextNode("Начать заново");
+            // stopBtn.appendChild(text2);
+        } else {
+            alert('Ви не досягли відповідного віку');
+            bot.style.display = 'none';
+            stopBtn.innerText = 'Почати нову гру';
+            buttons.style.bottom = '350px';
+            buttons.style.left = '1000px';
+        }
+    }
+
+    login();
+
+
+    // if (isRoadClear == 'зелений') {
+    //     alert('иди');
 
     function getElement(element) {
         return document.querySelector(element);
     }
-    let [text] = document.getElementsByClassName("text");
+
+
+    var [text] = document.getElementsByClassName("text");
     getElement('.smiley').ondblclick = function () {
         this.style.display = 'none';
-        text.innerText = 'Mолодець!!!';
+        text.innerText = 'Mолодець:)!!!';
         text.style.color = 'red';
         text.style.background = 'white';
         clearTimeout(stopTimer);
@@ -129,6 +188,7 @@
     var stopTimer;
     let smiley = document.getElementsByClassName('smiley');
     smiley.style.visibility = 'visible';
+
     //Функция для старта
     function testTimer(startTime) {
         let toggle = false;
@@ -160,7 +220,6 @@
         };
 
 
-
         //для повторного запуска очистим rezult
         document.getElementById("rezult").innerHTML = '';
         //выключим кнопку запуска
@@ -177,7 +236,7 @@
         var seconds = time;
         if (seconds < 10) seconds = '0' + seconds;
         //отрисовываем время
-        document.getElementById("time").innerHTML = '<span>Осталось времени- ' + min + ' мин ' + seconds + ' секунд</span>';
+        document.getElementById("time").innerHTML = '<span>Залишилось часу - ' + min + ' хв ' + seconds + ' секунд</span>';
         //уменьшаем общее время на одну секунду
         startTime--;
         //смотрим время не закончилось
@@ -188,15 +247,23 @@
             }, 1000);
             //если закончилось, то выводим сообщение на экран, и делаем кнопку запуска активной
         } else {
-            document.getElementById("time").innerHTML = '<span>Осталось времени- 00 мин 00 секунд</span>';
+            document.getElementById("time").innerHTML = '<span>Залишилось часу - 00 хв 00 секунд</span>';
             var rezult = document.getElementById("rezult");
-            rezult.innerHTML = "Время вышло";
+            rezult.innerHTML = "Час вийшов";
+            text.innerText = 'Нажаль ви не впорались;(';
             clearTimeout(stopTimer);
-            var bot = document.getElementById("bot");
-            bot.removeAttribute("disabled", "disabled");
-            bot.removeChild(bot.childNodes[0]);
-            var text = document.createTextNode("Начать заново");
-            bot.appendChild(text);
+            bot = document.getElementById("bot");
+            bot.style.display = 'none';
+            buttons.style.bottom = '350px';
+            buttons.style.left = '800px';
+            // bot.removeAttribute("disabled", "disabled");
+            // bot.removeChild(bot.childNodes[0]);
+            // stopBtn.removeAttribute("disabled", "disabled");
+            // stopBtn.removeChild(stopBtn.childNodes[0]);
+            // var text2 = document.createTextNode("Начать заново");
+            // stopBtn.appendChild(text2);
+            stopBtn.innerText = 'Почати нову гру'
+
         }
 
     }
@@ -211,8 +278,6 @@
         location.reload()
 
     }
-
-
 
 
 </script>
